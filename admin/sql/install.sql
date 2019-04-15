@@ -7,15 +7,15 @@ SET @db   = DATABASE();
 
 /* ==================== tables ==================== */
 
-CREATE TABLE IF NOT EXISTS `#__pv_cf_online_reports` (
+CREATE TABLE IF NOT EXISTS `jos_pv_cf_online_reports` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `filername` varchar(255) NOT NULL DEFAULT '',
   `reporturl` varchar(255) NOT NULL DEFAULT '',
-  `year` smallint(4) NOT NULL DEFAULT '',
+  `year` smallint(4) NOT NULL DEFAULT 0,
   `class` varchar(255) NOT NULL DEFAULT '',
   `cycle` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
-  `ordinal` smallint(4) NOT NULL DEFAULT '',
+  `ordinal` smallint(4) NOT NULL DEFAULT 0,
   `reporttype` varchar(255) NOT NULL DEFAULT '',
   `reportid` varchar(255) NOT NULL DEFAULT '',
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
@@ -26,15 +26,15 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_online_reports` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_reports` (
+CREATE TABLE IF NOT EXISTS `jos_pv_cf_paper_reports` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `filername` varchar(255) NOT NULL DEFAULT '',
   `reporturl` varchar(255) NOT NULL DEFAULT '',
-  `year` smallint(4) NOT NULL DEFAULT '',
+  `year` smallint(4) NOT NULL DEFAULT 0,
   `class` varchar(255) NOT NULL DEFAULT '',
   `cycle` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
-  `ordinal` smallint(4) NOT NULL DEFAULT '',
+  `ordinal` smallint(4) NOT NULL DEFAULT 0,
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
   `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -43,12 +43,13 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_reports` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__pv_cf_online_maps` (
+CREATE TABLE IF NOT EXISTS `jos_pv_cf_online_maps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `class` varchar(255) NOT NULL DEFAULT '',
   `entity` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
-  `year` smallint(4) NOT NULL DEFAULT '',
+  `ordinal` smallint(4) NOT NULL DEFAULT 0,
+  `year` smallint(4) NOT NULL DEFAULT 0,
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
   `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -57,12 +58,13 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_online_maps` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__pv_cf_file_maps` (
+CREATE TABLE IF NOT EXISTS `jos_pv_cf_file_maps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `class` varchar(255) NOT NULL DEFAULT '',
   `entity` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
-  `year` smallint(4) NOT NULL DEFAULT '',
+  `ordinal` smallint(4) NOT NULL DEFAULT 0,
+  `year` smallint(4) NOT NULL DEFAULT 0,
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
   `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
