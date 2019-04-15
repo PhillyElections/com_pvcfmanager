@@ -3,13 +3,13 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Item Controller for [COmponent] Component
+ * Onlineitem Controller for [COmponent] Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerControllerItem extends PvcfmanagerController
+class PvcfmanagerControllerOnlineitem extends PvcfmanagerController
 {
     /**
      * Bind tasks to methods
@@ -30,7 +30,7 @@ class PvcfmanagerControllerItem extends PvcfmanagerController
      */
     public function edit()
     {
-        JRequest::setVar('view', 'item');
+        JRequest::setVar('view', 'onlineitem');
 
         parent::display();
     }
@@ -45,7 +45,7 @@ class PvcfmanagerControllerItem extends PvcfmanagerController
 
         JRequest::checkToken() or jexit('Invalid Token');
 
-        $model = $this->getModel('item');
+        $model = $this->getModel('onlineitem');
         $post  = JRequest::get('post');
 
         if ($model->store($post)) {
@@ -71,7 +71,7 @@ class PvcfmanagerControllerItem extends PvcfmanagerController
     {
         JRequest::checkToken() or jexit('Invalid Token');
 
-        $model = $this->getModel('item');
+        $model = $this->getModel('onlineitem');
         if (!$model->delete()) {
             $msg = JText::_('Error: One or More Items Could not be Deleted');
         } else {

@@ -3,13 +3,13 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Item Model for [COmponent] Component
+ * Onlineitem Model for [COmponent] Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerModelItem extends JModel
+class PvcfmanagerModelOnlineitem extends JModel
 {
     /**
      * Constructor retrieves the ID from the request
@@ -30,7 +30,7 @@ class PvcfmanagerModelItem extends JModel
     }
 
     /**
-     * Set the active Item ID
+     * Set the active Onlineitem ID
      * @param int $id]
      * @return  void
      */
@@ -42,7 +42,7 @@ class PvcfmanagerModelItem extends JModel
     }
 
     /**
-     * Get an item
+     * Get an onlineitem
      * @return object with data
      */
     public function &getData()
@@ -77,13 +77,13 @@ class PvcfmanagerModelItem extends JModel
 
         $data[$dateIndex] = $dateNow->toMySQL();
 
-        // Bind the form fields to the Item table
+        // Bind the form fields to the Onlineitem table
         if (!$row->bind($data)) {
             $this->setError($this->_db->getErrorMsg());
             return false;
         }
 
-        // Make sure the Item record is valid
+        // Make sure the Onlineitem record is valid
         if (!$row->check()) {
             //$this->setError($this->_db->getErrorMsg());
             foreach ($row->getErrors() as $msg) {

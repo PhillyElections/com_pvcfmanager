@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted access');
  * @subpackage Components
  * @license    GNU/GPL
  */
-class TableItem extends JTable
+class TableOnlineitem extends JTable
 {
     public $id;
     public $field;
@@ -25,7 +25,7 @@ class TableItem extends JTable
      */
     public function __construct(&$_db)
     {
-        parent::__construct('#__pvcfmanager', 'id', $_db);
+        parent::__construct('#__pv_cf_online_reports', 'id', $_db);
     }
 
     /**
@@ -37,11 +37,11 @@ class TableItem extends JTable
         $error = 0;
 
         // we need something for field
-        if (!$this->field) {
+/*        if (!$this->field) {
             $this->setError(JText::_('VALIDATION FIELD REQUIRED'));
             $error++;
         }
-
+*/
         if ($error) {
             return false;
         }
