@@ -31,7 +31,7 @@ for ($i = 0, $n = count($onlinemaps); $i < $n; $i++) {
     $row     = &$onlinemaps[$i];
     $checked = JHTML::_('grid.id', $i, $row->id);
     $published = JHTML::_('grid.published', $row, $i);
-    $link = JRoute::_('index.php?option=com_boilerplate&controller=onlinemap&task=edit&cid[]='.$row->id);
+    $link = JRoute::_('index.php?option=com_pvcfmanager&controller=onlinemap&task=edit&cid[]='.$row->id);
 
             ?>
                 <tr class="<?="row$k";?>">

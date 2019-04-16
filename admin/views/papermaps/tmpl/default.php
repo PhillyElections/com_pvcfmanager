@@ -31,7 +31,7 @@ for ($i = 0, $n = count($papermaps); $i < $n; $i++) {
     $row     = &$papermaps[$i];
     $checked = JHTML::_('grid.id', $i, $row->id);
     $published = JHTML::_('grid.published', $row, $i);
-    $link = JRoute::_('index.php?option=com_boilerplate&controller=papermap&task=edit&cid[]='.$row->id);
+    $link = JRoute::_('index.php?option=com_pvcfmanager&controller=papermap&task=edit&cid[]='.$row->id);
 
             ?>
                 <tr class="<?="row$k";?>">
