@@ -71,6 +71,10 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
             $link = $record_url . JRequest::getVar('next', '', 'int');
         }
 
+        if (JRequest::getVar('save_and_new')) {
+            $this->edit();
+        }
+
         // Let's go back to the default view
         $this->setRedirect($link, $msg);
     }

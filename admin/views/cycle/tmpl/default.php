@@ -22,7 +22,7 @@ $cycle = !$this->isNew ? $this->cycle : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="number" name="number" size="62" value="<?=$cycle->number ? $cycle->number : $cycle['number'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('CYCLE NUMBER PLACEHOLDER');?>" />
+                    <input type="text" id="number" name="number" size="62" value="<?=$cycle->number ? $cycle->number : $cycle['number'];?>" class="input_box required" maxlength="60" cycleholder="<?=JText::_('CYCLE NUMBER PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
@@ -32,17 +32,41 @@ $cycle = !$this->isNew ? $this->cycle : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$cycle->name ? $cycle->name : $cycle['name'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('CYCLE NAME PLACEHOLDER');?>" />
+                    <input type="text" id="name" name="name" size="62" value="<?=$cycle->name ? $cycle->name : $cycle['name'];?>" class="input_box required" maxlength="60" cycleholder="<?=JText::_('CYCLE NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td height="30">&nbsp;</td>
                 <td>
-                    <button class="button validate" type="submit"><?=$this->isNew ? JText::_('SUBMIT') : JText::_('UPDATE');?></button>
-                    <input type="hidden" name="task" value="<?=$this->isNew ? 'save' : 'update';?>" />
+                    <input class="button validate" name="save_and_close" type="submit" value="<?=$this->isNew ? JText::_('CREATE') : JText::_('SAVE AND CLOSE');?>" />
+                    <input class="button validate" name="save_and_new" type="submit" value="<?=$this->isNew ? JText::_('CREATE AND NEW') : JText::_('SAVE AND NEW');?>" />
+<?php
+if (!$this->isNew):
+?>
+                    <input class="button validate" name="save_only" type="submit" value="<?=JText::_('UPDATE');?>" />
+                    <input type="hidden" name="task" value="update" />
+<?php
+if (($cycle->id - 1)):
+?>
+                    <input class="button validate" name="save_and_previous" type="submit" value="<?=JText::_('SAVE AND PREVIOUS');?>" />
+                    <input type="hidden" name="next" value="<?=($cycle->id - 1);?>" />
+<?php
+endif;
+if (($cycle->id + 1)):
+?>
+                    <input class="button validate" name="save_and_next" type="submit" value="<?=JText::_('SAVE AND NEXT');?>" />
+                    <input type="hidden" name="next" value="<?=($cycle->id + 1);?>" />
+<?php
+endif;
+else:
+?>
+                    <input type="hidden" name="task" value="create" />
+<?php
+endif;
+?>
                     <input type="hidden" name="controller" value="cycle" />
                     <input type="hidden" name="id" value="<?=$cycle->id;?>" />
-                    <?=JHTML::_('form.token');?>
+          <?=JHTML::_('form.token');?>
                 </td>
             </tr>
         </tbody>
