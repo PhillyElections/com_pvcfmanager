@@ -36,6 +36,12 @@
     </languages>
     <administration>
         <menu link="option=com_pvcfmanager">PVCFManager</menu>
+        <submenu>
+          <menu link="option=com_pvcfmanager">Reports</menu>
+          <menu link="option=com_pvcfmanager&amp;controller=onlinemaps">Configure Online Maps</menu>
+          <menu link="option=com_pvcfmanager&amp;controller=papermaps">Configure Paper Maps</menu>
+          <menu link="option=com_pvcfmanager&amp;controller=cycles">Configure Cycles</menu>
+        </submenu>
         <files folder="admin">
             <filename>index.html</filename>
             <filename>pvcfmanager.php</filename>
