@@ -21,7 +21,11 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
 
         // Register Extra tasks
         $this->registerTask('add', 'edit');
-        $this->registerTask('update', 'save');
+        $this->registerTask('save_only', 'save');
+        $this->registerTask('save_and_previous', 'save');
+        $this->registerTask('save_and_next', 'save');
+        $this->registerTask('save_and_new', 'save');
+        $this->registerTask('save_and_close', 'save');
     }
 
     /**
