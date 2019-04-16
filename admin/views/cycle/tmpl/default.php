@@ -60,7 +60,7 @@ if (($cycle->id + 1)):
 endif;
 else:
 ?>
-                    <input type="hidden" name="task" value="add" />
+                    <input type="hidden" name="task" value="update" />
 <?php
 endif;
 ?>
