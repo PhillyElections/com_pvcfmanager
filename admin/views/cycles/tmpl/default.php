@@ -19,13 +19,10 @@ $cycles      = $this->cycles;
                     <th width="1px">
                         P
                     </th>
-                    <th width="10%">
-                        <?=JText::_('FIELD');?>
-                    </th>
-                    <th width="10%">
+                   <th width="5%">
                         <?=JText::_('CYCLE NUMBER');?>
                     </th>
-                    <th width="10%">
+                    <th width="20%">
                         <?=JText::_('CYCLE NAME');?>
                     </th>
                     <th width="10%">
