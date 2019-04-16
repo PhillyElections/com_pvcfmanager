@@ -1,6 +1,6 @@
 <?php
 /**
- * Site bootstrap file for [COmponent] Component
+ * Site bootstrap file for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components

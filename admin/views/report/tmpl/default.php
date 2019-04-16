@@ -7,9 +7,9 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
         JError::raiseWarning(1, $msg);
     }
 }
-d('item: in default form', $this);
+d('report: in default form', $this);
 // try to cast to object next
-$item = !$this->isNew ? $this->item : JRequest::get('post');
+$report = !$this->isNew ? $this->report : JRequest::get('post');
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
@@ -22,7 +22,7 @@ $item = !$this->isNew ? $this->item : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="field" name="field" size="62" value="<?=$item->field ? $item->field : $item['field'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('FIELD PLACEHOLDER');?>" />
+                    <input type="text" id="field" name="field" size="62" value="<?=$report->field ? $report->field : $report['field'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('FIELD PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
@@ -30,8 +30,8 @@ $item = !$this->isNew ? $this->item : JRequest::get('post');
                 <td>
                     <button class="button validate" type="submit"><?=$this->isNew ? JText::_('SUBMIT') : JText::_('UPDATE');?></button>
                     <input type="hidden" name="task" value="<?=$this->isNew ? 'save' : 'update';?>" />
-                    <input type="hidden" name="controller" value="item" />
-                    <input type="hidden" name="id" value="<?=$item->id;?>" />
+                    <input type="hidden" name="controller" value="report" />
+                    <input type="hidden" name="id" value="<?=$report->id;?>" />
                     <?=JHTML::_('form.token');?>
                 </td>
             </tr>

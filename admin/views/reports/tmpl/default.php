@@ -2,7 +2,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 $pagination = &$this->pagination;
-$items      = $this->items;
+$reports      = $this->reports;
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" name="adminForm" id="adminForm">
@@ -14,7 +14,7 @@ $items      = $this->items;
                         <?=JText::_('ID');?>
                     </th>
                     <th width="1px">
-                        <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($items);?>);" />
+                        <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($reports);?>);" />
                     </th>
                     <th width="1px">
                         P
@@ -27,11 +27,11 @@ $items      = $this->items;
             <tbody>
             <?php
 $k = 0;
-for ($i = 0, $n = count($items); $i < $n; $i++) {
-    $row     = &$items[$i];
+for ($i = 0, $n = count($reports); $i < $n; $i++) {
+    $row     = &$reports[$i];
     $checked = JHTML::_('grid.id', $i, $row->id);
     $published = JHTML::_('grid.published', $row, $i);
-    $link = JRoute::_('index.php?option=com_boilerplate&controller=item&task=edit&cid[]='.$row->id);
+    $link = JRoute::_('index.php?option=com_boilerplate&controller=report&task=edit&cid[]='.$row->id);
 
             ?>
                 <tr class="<?="row$k";?>">
@@ -63,6 +63,6 @@ $k = 1 - $k;
     <?=JHTML::_('form.token');?>
     <input type="hidden" name="task" value="" />
     <input type="hidden" name="boxchecked" value="0" />
-    <input type="hidden" name="controller" value="item" />
+    <input type="hidden" name="controller" value="report" />
     <?=JHTML::_('form.token');?>
 </form>

@@ -3,16 +3,25 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Item Table for [COmponent] Component
+ * Item Table for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class TableOnlineitem extends JTable
+class TableReport extends JTable
 {
     public $id;
-    public $field;
+    public $source;
+    public $filername;
+    public $reporturl;
+    public $year;
+    public $class;
+    public $cycle;
+    public $display;
+    public $ordinal;
+    public $reporttype;
+    public $reportid;
     public $published;
     public $checked_out;
     public $checked_out_time;
@@ -25,7 +34,7 @@ class TableOnlineitem extends JTable
      */
     public function __construct(&$_db)
     {
-        parent::__construct('#__pv_cf_online_reports', 'id', $_db);
+        parent::__construct('#__pv_cf_reports', 'id', $_db);
     }
 
     /**

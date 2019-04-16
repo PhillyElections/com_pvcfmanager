@@ -3,7 +3,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Items Model for [COmponent] Component
+ * Items Model for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components

@@ -3,13 +3,13 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Item View for [COmponent] Component
+ * Report View for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerViewItem extends JView
+class PvcfmanagerViewReport extends JView
 {
     /**
      * display method of Item view
@@ -18,12 +18,12 @@ class PvcfmanagerViewItem extends JView
     public function display($tpl = null)
     {
 
-        $item = &$this->get('Data');
+        $report = &$this->get('Data');
 
-        $isNew = ($item->id < 1);
+        $isNew = ($report->id < 1);
 
         $text = $isNew ? JText::_('New') : JText::_('Edit');
-        JToolBarHelper::title(JText::_('Item') . ': <small><small>[ ' . $text . ' ]</small></small>');
+        JToolBarHelper::title(JText::_('Report') . ': <small><small>[ ' . $text . ' ]</small></small>');
         if ($isNew) {
             JToolBarHelper::save('save', 'Register');
             JToolBarHelper::cancel('cancel', 'Close');
@@ -35,7 +35,7 @@ class PvcfmanagerViewItem extends JView
             JToolBarHelper::cancel('cancel', 'Close');
         }
 
-        $this->assignRef('item', $item);
+        $this->assignRef('report', $report);
         $this->assignRef('isNew', $isNew);
 
         parent::display($tpl);

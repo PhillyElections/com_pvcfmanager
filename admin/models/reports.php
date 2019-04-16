@@ -3,22 +3,22 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Onlineitems Model for [COmponent] Component
+ * Reports Model for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerModelOnlineitems extends JModel
+class PvcfmanagerModelReports extends JModel
 {
     /**
-     * Onlineitems data array
+     * Reports data array
      * @var array
      */
     public $_data;
 
     /**
-     * Onlineitems total
+     * Reports total
      * @var integer
      */
     public $_total;
@@ -58,14 +58,14 @@ class PvcfmanagerModelOnlineitems extends JModel
     {
         d('in buildQuery');
         $where = ' ';
-        $query = 'SELECT * FROM `#__pvcfmanager` ';
+        $query = 'SELECT * FROM `#__pv_cf_reports` ';
 
         return $query . $where;
     }
 
     /**
-     * Retrieve, store, and returns Onlineitems data
-     * @return array Onlineitems Data
+     * Retrieve, store, and returns Reports data
+     * @return array Reports Data
      */
     public function getData()
     {
@@ -79,7 +79,7 @@ class PvcfmanagerModelOnlineitems extends JModel
     }
 
     /**
-     * Retrieve, store, and return number of Onlineitems rows
+     * Retrieve, store, and return number of Reports rows
      * @return int number of rows
      */
     public function getTotal()
@@ -94,7 +94,7 @@ class PvcfmanagerModelOnlineitems extends JModel
     }
 
     /**
-     * Retrieve, store and return a current JPagination object of Onlineitems
+     * Retrieve, store and return a current JPagination object of Reports
      * @return array Array of objects containing the data from the database
      */
     public function getPagination()
@@ -109,7 +109,7 @@ class PvcfmanagerModelOnlineitems extends JModel
     }
 
     /**
-     * publish onlineitems
+     * publish items
      *
      * @return void
      */
@@ -118,14 +118,14 @@ class PvcfmanagerModelOnlineitems extends JModel
         $cid = JRequest::getVar('cid');
 
         foreach ($cid as $id) {
-            $row = JTable::getInstance('Onlineitems', 'Table');
+            $row = JTable::getInstance('Report', 'Table');
             $row->load($id);
             $row->publish($id, 1);
         }
     }
 
     /**
-     * unpublish onlineitems
+     * unpublish items
      *
      * @return void
      */
@@ -134,7 +134,7 @@ class PvcfmanagerModelOnlineitems extends JModel
         $cid = JRequest::getVar('cid');
 
         foreach ($cid as $id) {
-            $row = JTable::getInstance('Onlineitems', 'Table');
+            $row = JTable::getInstance('Report', 'Table');
             $row->load($id);
             $row->publish($id, 0);
         }

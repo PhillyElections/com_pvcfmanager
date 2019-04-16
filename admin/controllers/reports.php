@@ -3,41 +3,41 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Onlineitems Controller for [COmponent] Component
+ * Reports Controller for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerControllerOnlineitems extends PvcfmanagerController
+class PvcfmanagerControllerReports extends PvcfmanagerController
 {
     /**
-     * Display the Onlineitems View
+     * Display the Reports View
      * @return void
      */
     public function display()
     {
-        JRequest::setVar('view', 'onlineitems');
+        JRequest::setVar('view', 'reports');
 
         parent::display();
     }
 
     /**
-     * Redirect Edit task to Onlineitem Controller
+     * Redirect Edit task to Report Controller
      * @return void
      */
     public function edit()
     {
         $mainframe = JFactory::getApplication();
         $cid       = JRequest::getVar('cid');
-        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=onlineitem&task=edit&cid=' . $cid[0]);
+        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=item&task=edit&cid=' . $cid[0]);
     }
 
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
 
-        $model = $this->getModel('Onlineitems');
+        $model = $this->getModel('Reports');
         $model->publish();
         $this->display();
     }
@@ -46,7 +46,7 @@ class PvcfmanagerControllerOnlineitems extends PvcfmanagerController
     {
         JRequest::checkToken() or jexit('Invalid Token');
 
-        $model = $this->getModel('Onlineitems');
+        $model = $this->getModel('Reports');
         $model->unpublish();
         $this->display();
     }
