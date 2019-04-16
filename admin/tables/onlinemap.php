@@ -29,7 +29,7 @@ class TableOnlinemap extends JTable
      */
     public function __construct(&$_db)
     {
-        parent::__construct('#__pv_cf_reports', 'id', $_db);
+        parent::__construct('#__pv_cf_online_maps', 'id', $_db);
     }
 
     /**

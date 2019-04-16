@@ -58,7 +58,7 @@ class PvcfmanagerModelPapermaps extends JModel
     {
         d('in buildQuery');
         $where = ' ';
-        $query = 'SELECT * FROM `#__pv_cf_papermaps` ';
+        $query = 'SELECT * FROM `#__pv_cf_paper_maps` ';
 
         return $query . $where;
     }

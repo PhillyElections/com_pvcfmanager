@@ -26,7 +26,7 @@ class TableCycle extends JTable
      */
     public function __construct(&$_db)
     {
-        parent::__construct('#__pv_cf_reports', 'id', $_db);
+        parent::__construct('#__pv_cf_cycles', 'id', $_db);
     }
 
     /**

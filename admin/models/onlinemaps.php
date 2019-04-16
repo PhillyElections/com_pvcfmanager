@@ -58,7 +58,7 @@ class PvcfmanagerModelOnlinemaps extends JModel
     {
         d('in buildQuery');
         $where = ' ';
-        $query = 'SELECT * FROM `#__pv_cf_onlinemaps` ';
+        $query = 'SELECT * FROM `#__pv_cf_online_maps` ';
 
         return $query . $where;
     }
