@@ -42,13 +42,11 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
      */
     public function save()
     {
-
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('papermap');
-        $post  = JRequest::get('post');
 
-        if ($model->store($post)) {
+        if ($model->store()) {
             $msg = JText::_('Saved!');
         } else {
             // let's grab all those errors and make them available to the view
@@ -57,12 +55,29 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
             return $this->edit();
         }
 
-        // Let's go back to the default view
+        $record_url = 'index.php?option=com_pvcfmanager&controller=papermap&task=edit&cid[]=';
+
         $link = 'index.php?option=com_pvcfmanager&controller=papermaps';
 
+        if (JRequest::getVar('save_only')) {
+            $link = $record_url . JRequest::getVar('id', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_previous')) {
+            $link = $record_url . JRequest::getVar('previous', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_next')) {
+            $link = $record_url . JRequest::getVar('next', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_new')) {
+            $link = 'index.php?option=com_pvcfmanager&controller=papermap&task=add';
+        }
+
+        // Let's go back to the default view
         $this->setRedirect($link, $msg);
     }
-
     /**
      * Remove record(s)
      * @return void

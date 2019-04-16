@@ -42,7 +42,6 @@ class PvcfmanagerControllerReport extends PvcfmanagerController
      */
     public function save()
     {
-
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('report');
