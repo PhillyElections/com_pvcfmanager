@@ -1,68 +1,40 @@
 <?php
+// no direct access
 defined('_JEXEC') or die('Restricted access');
 
-$pagination = &$this->pagination;
-$onlinemaps      = $this->onlinemaps;
-
-?>
-<form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" name="adminForm" id="adminForm">
-    <div id="editcell">
-        <table class="adminlist">
-            <thead>
-                <tr>
-                    <th width="1px">
-                        <?=JText::_('ID');?>
-                    </th>
-                    <th width="1px">
-                        <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($onlinemaps);?>);" />
-                    </th>
-                    <th width="1px">
-                        P
-                    </th>
-                    <th width="10%">
-                        <?=JText::_('FIELD');?>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-$k = 0;
-for ($i = 0, $n = count($onlinemaps); $i < $n; $i++) {
-    $row     = &$onlinemaps[$i];
-    $checked = JHTML::_('grid.id', $i, $row->id);
-    $published = JHTML::_('grid.published', $row, $i);
-    $link = JRoute::_('index.php?option=com_boilerplate&controller=onlinemap&task=edit&cid[]='.$row->id);
-
-            ?>
-                <tr class="<?="row$k";?>">
-                    <td>
-                        <?=$row->id;?>
-                    </td>
-                    <td>
-                        <?=$checked;?>
-                    </td>
-                    <td>
-                        <?=$published;?>
-                    </td>
-                    <td>
-                        <a href="<?=$link?>"><?=$row->field;?></a>
-                    </td>
-                </tr>
-            <?php
-$k = 1 - $k;
+if (count(JRequest::getVar('msg', null, 'post'))) {
+    foreach (JRequest::getVar('msg', null, 'post') as $msg) {
+        JError::raiseWarning(1, $msg);
+    }
 }
+d('onlinemap: in default form', $this);
+// try to cast to object next
+$onlinemap = !$this->isNew ? $this->onlinemap : JRequest::get('post');
+
 ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="10"><?php echo $pagination->getListFooter(); ?></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
-    <?=JHTML::_('form.token');?>
-    <input type="hidden" name="task" value="" />
-    <input type="hidden" name="boxchecked" value="0" />
-    <input type="hidden" name="controller" value="onlinemap" />
-    <?=JHTML::_('form.token');?>
+<form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
+    <table cellpadding="0" cellspacing="0" border="0" class="adminform">
+        <tbody>
+            <tr>
+                <td width="200" height="30">
+                    <label id="namemsg" for="field">
+                        <?=JText::_('FIELD');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="field" name="field" size="62" value="<?=$onlinemap->field ? $onlinemap->field : $onlinemap['field'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('FIELD PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td height="30">&nbsp;</td>
+                <td>
+                    <button class="button validate" type="submit"><?=$this->isNew ? JText::_('SUBMIT') : JText::_('UPDATE');?></button>
+                    <input type="hidden" name="task" value="<?=$this->isNew ? 'save' : 'update';?>" />
+                    <input type="hidden" name="controller" value="onlinemap" />
+                    <input type="hidden" name="id" value="<?=$onlinemap->id;?>" />
+                    <?=JHTML::_('form.token');?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </form>

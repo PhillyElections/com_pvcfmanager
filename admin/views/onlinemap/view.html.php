@@ -3,31 +3,39 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Onlinemaps View for PVCFManager Component
+ * Onlinemap View for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerViewOnlinemaps extends JView
+class PvcfmanagerViewOnlinemap extends JView
 {
     /**
-     * Onlinemaps view display method
+     * display method of Item view
      * @return void
      **/
     public function display($tpl = null)
     {
-        JToolBarHelper::title(JText::_('PVCFManager Onlinemaps Manager'), 'generic.png');
-        JToolBarHelper::deleteList();
-        JToolBarHelper::editListX();
-        JToolBarHelper::addNewX();
+        $onlinemap = &$this->get('Data');
 
-        d($this);
-        $onlinemaps    = &$this->get('Data');
-        $pagination = &$this->get('Pagination');
+        $isNew = ($onlinemap->id < 1);
 
-        $this->assignRef('onlinemaps', $onlinemaps);
-        $this->assignRef('pagination', $pagination);
+        $text = $isNew ? JText::_('New') : JText::_('Edit');
+        JToolBarHelper::title(JText::_('Onlinemap') . ': <small><small>[ ' . $text . ' ]</small></small>');
+        if ($isNew) {
+            JToolBarHelper::save('save', 'Register');
+            JToolBarHelper::cancel('cancel', 'Close');
+            // We'll use a separate template for new items: default_add
+            // $tpl = 'add';
+        } else {
+            // for existing items the button is renamed `close`
+            JToolBarHelper::save('save', 'Update');
+            JToolBarHelper::cancel('cancel', 'Close');
+        }
+
+        $this->assignRef('onlinemap', $onlinemap);
+        $this->assignRef('isNew', $isNew);
 
         parent::display($tpl);
     }

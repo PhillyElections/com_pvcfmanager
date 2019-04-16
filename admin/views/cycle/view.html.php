@@ -17,7 +17,6 @@ class PvcfmanagerViewCycle extends JView
      **/
     public function display($tpl = null)
     {
-
         $cycle = &$this->get('Data');
 
         $isNew = ($cycle->id < 1);

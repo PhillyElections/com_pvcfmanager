@@ -17,7 +17,6 @@ class PvcfmanagerViewPapermap extends JView
      **/
     public function display($tpl = null)
     {
-
         $papermap = &$this->get('Data');
 
         $isNew = ($papermap->id < 1);

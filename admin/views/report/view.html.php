@@ -17,7 +17,6 @@ class PvcfmanagerViewReport extends JView
      **/
     public function display($tpl = null)
     {
-
         $report = &$this->get('Data');
 
         $isNew = ($report->id < 1);
