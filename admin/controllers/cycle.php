@@ -42,13 +42,11 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
      */
     public function save()
     {
-
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('cycle');
-        $post  = JRequest::get('post');
 
-        if ($model->store($post)) {
+        if ($model->store()) {
             $msg = JText::_('Saved!');
         } else {
             // let's grab all those errors and make them available to the view
@@ -57,9 +55,23 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
             return $this->edit();
         }
 
-        // Let's go back to the default view
-        $link = 'index.php?option=com_pvcfmanager&view=cycle';
+        $record_url = 'index.php?option=com_pvcfmanager&controller=cycle&task=edit&cid[]=';
 
+        $link = 'index.php?option=com_pvcfmanager';
+
+        if (JRequest::getVar('save_only')) {
+            $link = $record_url . JRequest::getVar('id', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_previous')) {
+            $link = $record_url . JRequest::getVar('previous', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_next')) {
+            $link = $record_url . JRequest::getVar('next', '', 'int');
+        }
+
+        // Let's go back to the default view
         $this->setRedirect($link, $msg);
     }
 
@@ -78,7 +90,7 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
             $msg = JText::_('Items(s) Deleted');
         }
 
-        $this->setRedirect('index.php?option=com_pvcfmanager&view=cycles', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&controller=cycles', $msg);
     }
 
     /**
@@ -89,6 +101,6 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
     {
         $msg = JText::_('Operation Cancelled');
 
-        $this->setRedirect('index.php?option=com_pvcfmanager&view=cycles', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&controller=cycles', $msg);
     }
 }
