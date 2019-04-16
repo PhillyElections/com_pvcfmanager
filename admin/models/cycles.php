@@ -58,7 +58,7 @@ class PvcfmanagerModelCycles extends JModel
     {
         d('in buildQuery');
         $where = ' ';
-        $query = 'SELECT * FROM `#__pv_cf_reports` ';
+        $query = 'SELECT * FROM `#__pv_cf_cycles` ';
 
         return $query . $where;
     }
