@@ -57,7 +57,7 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
 
         $record_url = 'index.php?option=com_pvcfmanager&controller=cycle&task=edit&cid[]=';
 
-        $link = 'index.php?option=com_pvcfmanager';
+        $link = 'index.php?option=com_pvcfmanager&controller=cycles';
 
         if (JRequest::getVar('save_only')) {
             $link = $record_url . JRequest::getVar('id', '', 'int');
@@ -72,7 +72,7 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
         }
 
         if (JRequest::getVar('save_and_new')) {
-            $this->edit();
+            $link = 'index.php?option=com_pvcfmanager&controller=cycle&task=add';
         }
 
         // Let's go back to the default view
