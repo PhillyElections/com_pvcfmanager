@@ -49,7 +49,7 @@ class PvcfmanagerModelCycle extends JModel
     {
         // Load the data
         if (empty($this->_data)) {
-            $query = '' . $this->_db->quote($this->_id);
+            $query = ' SELECT * FROM `#__pv_cf_cycles` ' . ' WHERE `id` = ' . $this->_db->quote($this->_id);
             $this->_db->setQuery($query);
             $this->_data = $this->_db->loadObject();
         }
