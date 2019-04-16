@@ -22,6 +22,20 @@ $cycles      = $this->cycles;
                     <th width="10%">
                         <?=JText::_('FIELD');?>
                     </th>
+                    <th width="10%">
+                        <?=JText::_('CYCLE NUMBER');?>
+                    </th>
+                    <th width="10%">
+                        <?=JText::_('CYCLE NAME');?>
+                    </th>
+                    <th width="10%">
+                        <?=JText::_('CREATED');?>
+                    </th>
+                    <th width="10%">
+                        <?=JText::_('UPDATED');?>
+                    </th>
+                    <th width="auto">&nbsp;
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +59,19 @@ for ($i = 0, $n = count($cycles); $i < $n; $i++) {
                         <?=$published;?>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->field;?></a>
+                        <a href="<?=$link?>"><?=$row->number;?></a>
+                    </td>
+                    <td>
+                        <a href="<?=$link?>"><?=$row->name;?></a>
+                    </td>
+                    <td>
+                        <a href="<?=$link?>"><?=$row->created;?></a>
+                    </td>
+                    <td>
+                        <a href="<?=$link?>"><?=$row->updated;?></a>
+                    </td>
+                    <td>
+                        <a href="<?=$link?>">&nbsp;</a>
                     </td>
                 </tr>
             <?php
@@ -55,7 +81,7 @@ $k = 1 - $k;
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="10"><?php echo $pagination->getListFooter(); ?></td>
+                    <td colspan="7"><?php echo $pagination->getListFooter(); ?></td>
                 </tr>
             </tfoot>
         </table>

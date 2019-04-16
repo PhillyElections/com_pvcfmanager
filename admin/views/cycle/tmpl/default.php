@@ -17,12 +17,22 @@ $cycle = !$this->isNew ? $this->cycle : JRequest::get('post');
         <tbody>
             <tr>
                 <td width="200" height="30">
-                    <label id="namemsg" for="field">
-                        <?=JText::_('FIELD');?>:
+                    <label id="namemsg" for="number">
+                        <?=JText::_('CYCLE NUMBER');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="field" name="field" size="62" value="<?=$cycle->field ? $cycle->field : $cycle['field'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('FIELD PLACEHOLDER');?>" />
+                    <input type="text" id="number" name="number" size="62" value="<?=$cycle->number ? $cycle->number : $cycle['number'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('CYCLE NUMBER PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="namemsg" for="number">
+                        <?=JText::_('CYCLE NAME');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name" size="62" value="<?=$cycle->name ? $cycle->name : $cycle['name'];?>" class="input_box required" maxlength="60" placeholder="<?=JText::_('CYCLE NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
