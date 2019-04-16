@@ -42,6 +42,8 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
      */
     public function save()
     {
+        dd('save', $this, $_REQUEST);
+
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('cycle');
