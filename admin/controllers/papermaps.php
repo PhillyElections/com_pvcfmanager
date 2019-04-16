@@ -30,7 +30,7 @@ class PvcfmanagerControllerPapermaps extends PvcfmanagerController
     {
         $mainframe = JFactory::getApplication();
         $cid       = JRequest::getVar('cid');
-        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=item&task=edit&cid=' . $cid[0]);
+        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=papermap&task=edit&cid=' . $cid[0]);
     }
 
     public function publish()

@@ -58,7 +58,7 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
         }
 
         // Let's go back to the default view
-        $link = 'index.php?option=com_pvcfmanager';
+        $link = 'index.php?option=com_pvcfmanager&controller=papermaps';
 
         $this->setRedirect($link, $msg);
     }
@@ -78,7 +78,7 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
             $msg = JText::_('Items(s) Deleted');
         }
 
-        $this->setRedirect('index.php?option=com_pvcfmanager', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&controller=papermaps', $msg);
     }
 
     /**
@@ -89,6 +89,6 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
     {
         $msg = JText::_('Operation Cancelled');
 
-        $this->setRedirect('index.php?option=com_pvcfmanager', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&controller=papermaps', $msg);
     }
 }

@@ -30,7 +30,7 @@ class PvcfmanagerControllerOnlinemaps extends PvcfmanagerController
     {
         $mainframe = JFactory::getApplication();
         $cid       = JRequest::getVar('cid');
-        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=item&task=edit&cid=' . $cid[0]);
+        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=onlinemap&task=edit&cid=' . $cid[0]);
     }
 
     public function publish()
