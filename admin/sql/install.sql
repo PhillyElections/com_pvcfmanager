@@ -7,7 +7,7 @@ SET @db   = DATABASE();
 
 /* ==================== tables ==================== */
 
-CREATE TABLE IF NOT EXISTS `jos_pv_cf_reports` (
+CREATE TABLE IF NOT EXISTS `#__pv_cf_reports` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `source` varchar(10) NOT NULL DEFAULT '',
   `filername` varchar(255) NOT NULL DEFAULT '',
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `jos_pv_cf_reports` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `jos_pv_cf_online_maps` (
+CREATE TABLE IF NOT EXISTS `#__pv_cf_online_maps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `class` varchar(255) NOT NULL DEFAULT '',
   `entity` varchar(255) NOT NULL DEFAULT '',
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `jos_pv_cf_online_maps` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `jos_pv_cf_paper_maps` (
+CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_maps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `class` varchar(255) NOT NULL DEFAULT '',
   `entity` varchar(255) NOT NULL DEFAULT '',
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `jos_pv_cf_paper_maps` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `jos_pv_cf_cycles` (
+CREATE TABLE IF NOT EXISTS `#__pv_cf_cycles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `number` varchar(255) NOT NULL DEFAULT '',
   `name` varchar(255) NOT NULL DEFAULT '',
