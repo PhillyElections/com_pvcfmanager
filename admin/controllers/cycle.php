@@ -58,7 +58,7 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
         }
 
         // Let's go back to the default view
-        $link = 'index.php?option=com_pvcfmanager&controller=cycle';
+        $link = 'index.php?option=com_pvcfmanager&view=cycle';
 
         $this->setRedirect($link, $msg);
     }
@@ -78,7 +78,7 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
             $msg = JText::_('Items(s) Deleted');
         }
 
-        $this->setRedirect('index.php?option=com_pvcfmanager&controller=cycle', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&view=cycles', $msg);
     }
 
     /**
@@ -89,6 +89,6 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
     {
         $msg = JText::_('Operation Cancelled');
 
-        $this->setRedirect('index.php?option=com_pvcfmanager&controller=cycle', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&view=cycles', $msg);
     }
 }
