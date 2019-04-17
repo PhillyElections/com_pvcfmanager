@@ -33,6 +33,12 @@ class PvcfmanagerControllerCycles extends PvcfmanagerController
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=cycle&task=edit&cid=' . $cid[0]);
     }
 
+    public function add()
+    {
+        $mainframe = JFactory::getApplication();
+        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=cycle&task=add&&cid=' . $cid[0]);
+    }
+
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');

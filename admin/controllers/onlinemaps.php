@@ -33,6 +33,17 @@ class PvcfmanagerControllerOnlinemaps extends PvcfmanagerController
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=onlinemap&task=edit&cid=' . $cid[0]);
     }
 
+    /**
+     * Redirect Add task to Onlinemap Controller
+     * @return void
+     */
+    public function add()
+    {
+        $mainframe = JFactory::getApplication();
+        $cid       = JRequest::getVar('cid');
+        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=onlinemap&task=add&cid=' . $cid[0]);
+    }
+
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
