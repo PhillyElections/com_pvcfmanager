@@ -72,21 +72,22 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_cycles` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__pv_cf_cycles` VALUES
-('','1','Sixth Tuesday Pre-Primary','Sixth Tuesday Pre-Primary',1,,,@tnl,@tnl),
-('','2','Second Friday Pre-Primary','Second Friday Pre-Primary',1,,,@tnl,@tnl),
-('','3','Thirty Day Post-Primary','Thirty Day Post-Primary',1,,,@tnl,@tnl),
-('','4','Sixth Tuesday Pre-General','Sixth Tuesday Pre-General',1,,,@tnl,@tnl),
-('','5','Second Friday Pre-General','Second Friday Pre-General',1,,,@tnl,@tnl),
-('','6','Thirty Day Post-General','Thirty Day Post-General',1,,,@tnl,@tnl),
-('','7','Annual Report','{YEAR} Annual Report',1,,,@tnl,@tnl),
-('','8','Special Second Friday Pre-Election','Special Second Friday Pre-Election',1,,,@tnl,@tnl),
-('','9','Special Thirty Day Post-Election','Special Thirty Day Post-Election',1,,,@tnl,@tnl),
-('','101','Fourth Tuesday Pre-Primary','Fourth Tuesday Pre-Primary',1,,,@tnl,@tnl),
-('','201','Final Tuesday Pre-Primary','Final Tuesday Pre-Primary',1,,,@tnl,@tnl),
-('','401','Fourth Tuesday Pre-General','Fourth Tuesday Pre-General',1,,,@tnl,@tnl),
-('','501','Final Tuesday Pre-General','Final Tuesday Pre-General',1,,,@tnl,@tnl),
-('','10a','24-Hour Pre-Primary - Contributions','24-Hour Pre-Primary - Contributions',1,,,@tnl,@tnl),
-('','10b','24-Hour Pre-Primary - Expenditures','24-Hour Pre-Primary - Expenditures',1,,,@tnl,@tnl),
-('','11a','24-Hour Pre-General - Contributions','24-Hour Pre-General - Contributions',1,,,@tnl,@tnl),
-('','11b','24-Hour Pre-General - Expenditures','24-Hour Pre-General - Expenditures',1,,,@tnl,@tnl);
+INSERT INTO `#__pv_cf_cycles` 
+(`id`, `number`, `name`, `display`,`published`) VALUES
+(1,'1','Sixth Tuesday Pre-Primary','Sixth Tuesday Pre-Primary',1),
+(2,'2','Second Friday Pre-Primary','Second Friday Pre-Primary',1),
+(3,'3','Thirty Day Post-Primary','Thirty Day Post-Primary',1),
+(4,'4','Sixth Tuesday Pre-General','Sixth Tuesday Pre-General',1),
+(5,'5','Second Friday Pre-General','Second Friday Pre-General',1),
+(6,'6','Thirty Day Post-General','Thirty Day Post-General',1),
+(7,'7','Annual Report','{YEAR} Annual Report',1),
+(8,'8','Special Second Friday Pre-Election','Special Second Friday Pre-Election',1),
+(9,'9','Special Thirty Day Post-Election','Special Thirty Day Post-Election',1),
+(10,'101','Fourth Tuesday Pre-Primary','Fourth Tuesday Pre-Primary',1),
+(11,'201','Final Tuesday Pre-Primary','Final Tuesday Pre-Primary',1),
+(12,'401','Fourth Tuesday Pre-General','Fourth Tuesday Pre-General',1),
+(13,'501','Final Tuesday Pre-General','Final Tuesday Pre-General',1),
+(14,'10a','24-Hour Pre-Primary - Contributions','24-Hour Pre-Primary - Contributions',1),
+(15,'10b','24-Hour Pre-Primary - Expenditures','24-Hour Pre-Primary - Expenditures',1),
+(16,'11a','24-Hour Pre-General - Contributions','24-Hour Pre-General - Contributions',1),
+(17,'11b','24-Hour Pre-General - Expenditures','24-Hour Pre-General - Expenditures',1);
