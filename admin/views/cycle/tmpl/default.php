@@ -12,7 +12,7 @@ d('cycle: in default form', $this);
 $cycle = !$this->isNew ? $this->cycle : JRequest::get('post');
 
 ?>
-<form action="<?=JRoute::_('index.php?option=com_pvcfmanager&controller=cycle');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
+<form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
     <table cellpadding="0" cellspacing="0" border="0" class="adminform">
         <tbody>
             <tr>
@@ -64,6 +64,7 @@ else:
 <?php
 endif;
 ?>
+                    <input type="hidden" name="controller" value="cycle" />
                     <input type="hidden" name="id" value="<?=$cycle->id;?>" />
           <?=JHTML::_('form.token');?>
                 </td>
