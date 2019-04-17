@@ -43,8 +43,6 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
      */
     public function save()
     {
-        dd('save', $this, $_REQUEST);
-
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('cycle');
@@ -57,6 +55,7 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
 
             return $this->edit();
         }
+        dd('save', $this, $_REQUEST, $msg);
 
         $record_url = 'index.php?option=com_pvcfmanager&controller=cycle&task=edit&cid[]=';
 
