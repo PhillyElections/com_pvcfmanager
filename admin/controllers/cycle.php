@@ -55,7 +55,6 @@ class PvcfmanagerControllerCycle extends PvcfmanagerController
 
             return $this->edit();
         }
-        dd('save', $this, $_REQUEST, $msg);
 
         $record_url = 'index.php?option=com_pvcfmanager&controller=cycle&task=edit&cid[]=';
 

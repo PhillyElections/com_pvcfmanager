@@ -65,8 +65,9 @@ class PvcfmanagerModelCycle extends JModel
      * Method to store a record
      * @return    boolean
      */
-    public function store($data)
+    public function store()
     {
+        $data = JRequest::get('post');
         $row = &$this->getTable();
         $dateNow = &JFactory::getDate();
         $dateIndex = $this->_id ? 'updated' : 'created';
