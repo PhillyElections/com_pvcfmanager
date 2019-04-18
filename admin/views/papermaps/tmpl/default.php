@@ -2,7 +2,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 $pagination = &$this->pagination;
-$papermaps      = $this->papermaps;
+$rows      = $this->rows;
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" name="adminForm" id="adminForm">
@@ -14,7 +14,7 @@ $papermaps      = $this->papermaps;
                         <?=JText::_('ID');?>
                     </th>
                     <th width="1px">
-                        <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($papermaps);?>);" />
+                        <input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($rows);?>);" />
                     </th>
                     <th width="1px">
                         P
@@ -27,8 +27,8 @@ $papermaps      = $this->papermaps;
             <tbody>
             <?php
 $k = 0;
-for ($i = 0, $n = count($papermaps); $i < $n; $i++) {
-    $row     = &$papermaps[$i];
+for ($i = 0, $n = count($rows); $i < $n; $i++) {
+    $row     = &$rows[$i];
     $checked = JHTML::_('grid.id', $i, $row->id);
     $published = JHTML::_('grid.published', $row, $i);
     $link = JRoute::_('index.php?option=com_pvcfmanager&controller=papermap&task=edit&cid[]='.$row->id);
