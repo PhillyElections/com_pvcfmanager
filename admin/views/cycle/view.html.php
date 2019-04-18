@@ -17,9 +17,9 @@ class PvcfmanagerViewCycle extends JView
      **/
     public function display($tpl = null)
     {
-        $cycle = &$this->get('Data');
+        $item = &$this->get('Data');
 
-        $isNew = ($cycle->id < 1);
+        $isNew = ($item->id < 1);
 
         $text = $isNew ? JText::_('New') : JText::_('Edit');
         JToolBarHelper::title(JText::_('Cycle') . ': <small><small>[ ' . $text . ' ]</small></small>');
@@ -34,7 +34,7 @@ class PvcfmanagerViewCycle extends JView
             JToolBarHelper::cancel('cancel', 'Close');
         }
 
-        $this->assignRef('cycle', $cycle);
+        $this->assignRef('item', $item);
         $this->assignRef('isNew', $isNew);
 
         parent::display($tpl);
