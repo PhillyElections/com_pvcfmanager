@@ -23,7 +23,7 @@ class PvcfmanagerControllerReports extends PvcfmanagerController
     }
 
     /**
-     * Redirect Edit task to Report Controller
+     * Redirect Edit task to Onlinemap Controller
      * @return void
      */
     public function edit()
@@ -33,15 +33,10 @@ class PvcfmanagerControllerReports extends PvcfmanagerController
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=report&task=edit&cid=' . $cid[0]);
     }
 
-    /**
-     * Redirect Add task to Report Controller
-     * @return void
-     */
     public function add()
     {
         $mainframe = JFactory::getApplication();
-        $cid       = JRequest::getVar('cid');
-        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=report&task=add&cid=' . $cid[0]);
+        $mainframe->redirect('index.php?option=com_pvcfmanager&controller=report&task=add&&cid=' . $cid[0]);
     }
 
     public function publish()

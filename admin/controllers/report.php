@@ -21,12 +21,8 @@ class PvcfmanagerControllerReport extends PvcfmanagerController
 
         // Register Extra tasks
         $this->registerTask('add', 'edit');
-        $this->registerTask('save_only', 'save');
-        $this->registerTask('save_and_previous', 'save');
-        $this->registerTask('save_and_next', 'save');
-        $this->registerTask('save_and_new', 'save');
-        $this->registerTask('save_and_close', 'save');
-
+        $this->registerTask('register', 'save');
+        $this->registerTask('update', 'save');
     }
 
     /**
@@ -50,9 +46,8 @@ class PvcfmanagerControllerReport extends PvcfmanagerController
         JRequest::checkToken() or jexit('Invalid Token');
 
         $model = $this->getModel('report');
-        $post  = JRequest::get('post');
 
-        if ($model->store($post)) {
+        if ($model->store()) {
             $msg = JText::_('Saved!');
         } else {
             // let's grab all those errors and make them available to the view
@@ -61,9 +56,27 @@ class PvcfmanagerControllerReport extends PvcfmanagerController
             return $this->edit();
         }
 
-        // Let's go back to the default view
-        $link = 'index.php?option=com_pvcfmanager';
+        $record_url = 'index.php?option=com_pvcfmanager&controller=report&task=edit&cid[]=';
 
+        $link = 'index.php?option=com_pvcfmanager&controller=reports';
+
+        if (JRequest::getVar('save_only')) {
+            $link = $record_url . JRequest::getVar('id', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_previous')) {
+            $link = $record_url . JRequest::getVar('previous', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_next')) {
+            $link = $record_url . JRequest::getVar('next', '', 'int');
+        }
+
+        if (JRequest::getVar('save_and_new')) {
+            $link = 'index.php?option=com_pvcfmanager&controller=report&task=add';
+        }
+
+        // Let's go back to the default view
         $this->setRedirect($link, $msg);
     }
 
@@ -82,7 +95,7 @@ class PvcfmanagerControllerReport extends PvcfmanagerController
             $msg = JText::_('Items(s) Deleted');
         }
 
-        $this->setRedirect('index.php?option=com_pvcfmanager', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&controller=reports', $msg);
     }
 
     /**
@@ -93,6 +106,6 @@ class PvcfmanagerControllerReport extends PvcfmanagerController
     {
         $msg = JText::_('Operation Cancelled');
 
-        $this->setRedirect('index.php?option=com_pvcfmanager', $msg);
+        $this->setRedirect('index.php?option=com_pvcfmanager&controller=reports', $msg);
     }
 }
