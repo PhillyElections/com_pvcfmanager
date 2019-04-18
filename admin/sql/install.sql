@@ -107,7 +107,7 @@ INSERT INTO `#__pv_cf_cycles`
 ('11a','24-Hour Pre-General - Contributions','24-Hour Pre-General - Contributions',1),
 ('11b','24-Hour Pre-General - Expenditures','24-Hour Pre-General - Expenditures',1);
 
-INSERT INTO `#__jos_pv_classes` (`number`,`name`,`display`,`published`) VALUES
+INSERT INTO `#__pv_cf_classes` (`number`,`name`,`display`,`published`) VALUES
 ('01_mayor','Mayor','Mayor',1),
 ('02_city_commissioners','City Commissioners','City Commissioners',1),
 ('03_register_of_wills','Register of Wills','Register of Wills',1),
