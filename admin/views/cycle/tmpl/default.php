@@ -47,11 +47,11 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             <tr>
                 <td width="200" height="30">
                     <label id="displaymsg" for="display">
-                        <?=JText::_('CYCLE NAME');?>:
+                        <?=JText::_('CYCLE DISPLAY');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CYCLE NAME PLACEHOLDER');?>" />
+                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CYCLE DISPLAY PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
