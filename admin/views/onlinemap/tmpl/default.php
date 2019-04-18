@@ -27,31 +27,31 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             <tr>
                 <td width="200" height="30">
                     <label id="numbermsg" for="number">
-                        <?=JText::_('CLASS NUMBER');?>:
+                        <?=JText::_('ONLINEMAP NUMBER');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS NUMBER PLACEHOLDER');?>" />
+                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ONLINEMAP NUMBER PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="namemsg" for="name">
-                        <?=JText::_('CLASS NAME');?>:
+                        <?=JText::_('ONLINEMAP NAME');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS NAME PLACEHOLDER');?>" />
+                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ONLINEMAP NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="displaymsg" for="display">
-                        <?=JText::_('CLASS NAME');?>:
+                        <?=JText::_('ONLINEMAP NAME');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS NAME PLACEHOLDER');?>" />
+                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ONLINEMAP NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
