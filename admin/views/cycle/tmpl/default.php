@@ -17,6 +17,16 @@ $cycle = !$this->isNew ? $this->cycle : JRequest::get('post');
         <tbody>
             <tr>
                 <td width="200" height="30">
+                    <label id="publishedmsg" for="published">
+                        <?=JText::_('PUBLISHED');?>:
+                    </label>
+                </td>
+                <td>
+<?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $item->published); ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
                     <label id="namemsg" for="number">
                         <?=JText::_('CYCLE NUMBER');?>:
                     </label>
