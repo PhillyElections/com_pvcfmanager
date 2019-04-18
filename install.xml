@@ -41,6 +41,7 @@
           <menu link="option=com_pvcfmanager&amp;controller=onlinemaps">Configure Online Maps</menu>
           <menu link="option=com_pvcfmanager&amp;controller=papermaps">Configure Paper Maps</menu>
           <menu link="option=com_pvcfmanager&amp;controller=cycles">Configure Cycles</menu>
+          <menu link="option=com_pvcfmanager&amp;controller=classes">Configure Classes</menu>
         </submenu>
         <files folder="admin">
             <filename>index.html</filename>
