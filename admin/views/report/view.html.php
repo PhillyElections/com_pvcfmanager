@@ -17,9 +17,9 @@ class PvcfmanagerViewReport extends JView
      **/
     public function display($tpl = null)
     {
-        $report = &$this->get('Data');
+        $row = &$this->get('Data');
 
-        $isNew = ($report->id < 1);
+        $isNew = ($row->id < 1);
 
         $text = $isNew ? JText::_('New') : JText::_('Edit');
         JToolBarHelper::title(JText::_('Report') . ': <small><small>[ ' . $text . ' ]</small></small>');
@@ -34,7 +34,7 @@ class PvcfmanagerViewReport extends JView
             JToolBarHelper::cancel('cancel', 'Close');
         }
 
-        $this->assignRef('report', $report);
+        $this->assignRef('row', $row);
         $this->assignRef('isNew', $isNew);
 
         parent::display($tpl);

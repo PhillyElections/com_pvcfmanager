@@ -26,7 +26,7 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="namemsg" for="number">
+                    <label id="numbermsg" for="number">
                         <?=JText::_('CLASS NUMBER');?>:
                     </label>
                 </td>
@@ -36,12 +36,22 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="namemsg" for="number">
+                    <label id="namemsg" for="name">
                         <?=JText::_('CLASS NAME');?>:
                     </label>
                 </td>
                 <td>
                     <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS NAME PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="displaymsg" for="display">
+                        <?=JText::_('CLASS NAME');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>

@@ -23,10 +23,10 @@ class PvcfmanagerViewPapermaps extends JView
         JToolBarHelper::addNewX();
 
         d($this);
-        $papermaps  = &$this->get('Data');
+        $rows  = &$this->get('Data');
         $pagination = &$this->get('Pagination');
 
-        $this->assignRef('papermaps', $papermaps);
+        $this->assignRef('rows', $rows);
         $this->assignRef('pagination', $pagination);
 
         parent::display($tpl);

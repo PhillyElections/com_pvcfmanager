@@ -17,9 +17,9 @@ class PvcfmanagerViewPapermap extends JView
      **/
     public function display($tpl = null)
     {
-        $papermap = &$this->get('Data');
+        $row = &$this->get('Data');
 
-        $isNew = ($papermap->id < 1);
+        $isNew = ($row->id < 1);
 
         $text = $isNew ? JText::_('New') : JText::_('Edit');
         JToolBarHelper::title(JText::_('Papermap') . ': <small><small>[ ' . $text . ' ]</small></small>');
@@ -34,7 +34,7 @@ class PvcfmanagerViewPapermap extends JView
             JToolBarHelper::cancel('cancel', 'Close');
         }
 
-        $this->assignRef('papermap', $papermap);
+        $this->assignRef('row', $row);
         $this->assignRef('isNew', $isNew);
 
         parent::display($tpl);

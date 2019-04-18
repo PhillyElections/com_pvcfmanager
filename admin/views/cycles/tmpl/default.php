@@ -25,6 +25,9 @@ $rows      = $this->rows;
                     <th width="20%">
                         <?=JText::_('CYCLE NAME');?>
                     </th>
+                    <th width="20%">
+                        <?=JText::_('CYCLE DISPLAY');?>
+                    </th>
                     <th width="10%">
                         <?=JText::_('CREATED');?>
                     </th>
@@ -62,13 +65,16 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <a href="<?=$link?>"><?=$row->name;?></a>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->created;?></a>
+                        <a href="<?=$link?>"><?=$row->display;?></a>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->updated;?></a>
+                        "><?=$row->created;?>
                     </td>
                     <td>
-                        <a href="<?=$link?>">&nbsp;</a>
+                        <?=$row->updated;?>
+                    </td>
+                    <td>
+                        &nbsp;
                     </td>
                 </tr>
             <?php

@@ -23,10 +23,10 @@ class PvcfmanagerViewReports extends JView
         JToolBarHelper::addNewX();
 
         d($this);
-        $reports    = &$this->get('Data');
+        $rows    = &$this->get('Data');
         $pagination = &$this->get('Pagination');
 
-        $this->assignRef('reports', $reports);
+        $this->assignRef('rows', $rows);
         $this->assignRef('pagination', $pagination);
 
         parent::display($tpl);

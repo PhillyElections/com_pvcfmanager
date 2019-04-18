@@ -23,10 +23,10 @@ class PvcfmanagerViewOnlinemaps extends JView
         JToolBarHelper::addNewX();
 
         d($this);
-        $onlinemaps    = &$this->get('Data');
+        $rows    = &$this->get('Data');
         $pagination = &$this->get('Pagination');
 
-        $this->assignRef('onlinemaps', $onlinemaps);
+        $this->assignRef('rows', $rows);
         $this->assignRef('pagination', $pagination);
 
         parent::display($tpl);

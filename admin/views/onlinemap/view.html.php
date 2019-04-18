@@ -17,9 +17,9 @@ class PvcfmanagerViewOnlinemap extends JView
      **/
     public function display($tpl = null)
     {
-        $onlinemap = &$this->get('Data');
+        $row = &$this->get('Data');
 
-        $isNew = ($onlinemap->id < 1);
+        $isNew = ($row->id < 1);
 
         $text = $isNew ? JText::_('New') : JText::_('Edit');
         JToolBarHelper::title(JText::_('Onlinemap') . ': <small><small>[ ' . $text . ' ]</small></small>');
@@ -34,7 +34,7 @@ class PvcfmanagerViewOnlinemap extends JView
             JToolBarHelper::cancel('cancel', 'Close');
         }
 
-        $this->assignRef('onlinemap', $onlinemap);
+        $this->assignRef('row', $row);
         $this->assignRef('isNew', $isNew);
 
         parent::display($tpl);
