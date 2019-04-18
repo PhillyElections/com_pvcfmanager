@@ -3,21 +3,21 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Cycles View for PVCFManager Component
+ * Classes View for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerViewCycles extends JView
+class PvcfmanagerViewClasses extends JView
 {
     /**
-     * Cycles view display method
+     * Classes view display method
      * @return void
      **/
     public function display($tpl = null)
     {
-        JToolBarHelper::title(JText::_('PVCFManager Cycles Manager'), 'generic.png');
+        JToolBarHelper::title(JText::_('PVCFManager Classes Manager'), 'generic.png');
         JToolBarHelper::deleteList();
         JToolBarHelper::editListX();
         JToolBarHelper::addNewX();

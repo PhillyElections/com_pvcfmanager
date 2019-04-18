@@ -3,13 +3,13 @@
 defined('_JEXEC') or die('Restricted access');
 
 /**
- * Cycle View for PVCFManager Component
+ * Class View for PVCFManager Component
  *
  * @package    Philadelphia.Votes
  * @subpackage Components
  * @license    GNU/GPL
  */
-class PvcfmanagerViewCycle extends JView
+class PvcfmanagerViewClass extends JView
 {
     /**
      * display method of Item view
@@ -22,7 +22,7 @@ class PvcfmanagerViewCycle extends JView
         $isNew = ($row->id < 1);
 
         $text = $isNew ? JText::_('New') : JText::_('Edit');
-        JToolBarHelper::title(JText::_('Cycle') . ': <small><small>[ ' . $text . ' ]</small></small>');
+        JToolBarHelper::title(JText::_('Class') . ': <small><small>[ ' . $text . ' ]</small></small>');
         if ($isNew) {
             JToolBarHelper::save('save', 'Register');
             JToolBarHelper::cancel('cancel', 'Close');
