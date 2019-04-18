@@ -22,7 +22,6 @@ class PvcfmanagerViewOnlinemaps extends JView
         JToolBarHelper::editListX();
         JToolBarHelper::addNewX();
 
-        d($this);
         $rows    = &$this->get('Data');
         $pagination = &$this->get('Pagination');
 
