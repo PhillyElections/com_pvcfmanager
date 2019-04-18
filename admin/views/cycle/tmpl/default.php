@@ -46,18 +46,18 @@ if (!$this->isNew):
                     <input class="button validate" name="save_only" type="submit" value="<?=JText::_('UPDATE');?>" />
                     <input type="hidden" name="task" value="update" />
 <?php
-if (($cycle->id - 1)):
+    if (($cycle->id - 1)):
 ?>
                     <input class="button validate" name="save_and_previous" type="submit" value="<?=JText::_('SAVE AND PREVIOUS');?>" />
-                    <input type="hidden" name="next" value="<?=($cycle->id - 1);?>" />
+                    <input type="hidden" name="previous" value="<?=($cycle->id - 1);?>" />
 <?php
-endif;
-if (($cycle->id + 1)):
+    endif;
+    if (($cycle->id + 1)):
 ?>
                     <input class="button validate" name="save_and_next" type="submit" value="<?=JText::_('SAVE AND NEXT');?>" />
                     <input type="hidden" name="next" value="<?=($cycle->id + 1);?>" />
 <?php
-endif;
+    endif;
 else:
 ?>
                     <input type="hidden" name="task" value="update" />
