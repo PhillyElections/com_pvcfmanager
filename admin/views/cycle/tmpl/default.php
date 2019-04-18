@@ -22,7 +22,7 @@ $cycle = !$this->isNew ? $this->cycle : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-<?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $item->published); ?>
+<?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $cycle->published); ?>
                 </td>
             </tr>
             <tr>
