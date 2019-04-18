@@ -22,11 +22,10 @@ class PvcfmanagerViewCycles extends JView
         JToolBarHelper::editListX();
         JToolBarHelper::addNewX();
 
-        d($this);
-        $cycles    = &$this->get('Data');
+        $rows    = &$this->get('Data');
         $pagination = &$this->get('Pagination');
 
-        $this->assignRef('cycles', $cycles);
+        $this->assignRef('rows', $rows);
         $this->assignRef('pagination', $pagination);
 
         parent::display($tpl);

@@ -8,7 +8,7 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
     }
 }
 // try to cast to object next
-$item = !$this->isNew ? $this->item : JRequest::get('post');
+$row = !$this->isNew ? $this->row : JRequest::get('post');
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
@@ -21,7 +21,7 @@ $item = !$this->isNew ? $this->item : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-                    <?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $item->published); ?>
+                    <?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $row->published); ?>
                 </td>
             </tr>
             <tr>
@@ -31,7 +31,7 @@ $item = !$this->isNew ? $this->item : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="number" name="number" size="62" value="<?=$item->number ? $item->number : $item['number'];?>" class="input_box required" maxlength="60" cycleholder="<?=JText::_('CYCLE NUMBER PLACEHOLDER');?>" />
+                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" cycleholder="<?=JText::_('CYCLE NUMBER PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@ $item = !$this->isNew ? $this->item : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$item->name ? $item->name : $item['name'];?>" class="input_box required" maxlength="60" cycleholder="<?=JText::_('CYCLE NAME PLACEHOLDER');?>" />
+                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" cycleholder="<?=JText::_('CYCLE NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
@@ -55,16 +55,16 @@ if (!$this->isNew):
                     <input class="button validate" name="save_only" type="submit" value="<?=JText::_('UPDATE');?>" />
                     <input type="hidden" name="task" value="update" />
 <?php
-    if (($item->id - 1)):
+    if (($row->id - 1)):
 ?>
                     <input class="button validate" name="save_and_previous" type="submit" value="<?=JText::_('SAVE AND PREVIOUS');?>" />
-                    <input type="hidden" name="previous" value="<?=($item->id - 1);?>" />
+                    <input type="hidden" name="previous" value="<?=($row->id - 1);?>" />
 <?php
     endif;
-    if (($item->id + 1)):
+    if (($row->id + 1)):
 ?>
                     <input class="button validate" name="save_and_next" type="submit" value="<?=JText::_('SAVE AND NEXT');?>" />
-                    <input type="hidden" name="next" value="<?=($item->id + 1);?>" />
+                    <input type="hidden" name="next" value="<?=($row->id + 1);?>" />
 <?php
     endif;
 else:
@@ -74,7 +74,7 @@ else:
 endif;
 ?>
                     <input type="hidden" name="controller" value="cycle" />
-                    <input type="hidden" name="id" value="<?=$item->id;?>" />
+                    <input type="hidden" name="id" value="<?=$row->id;?>" />
           <?=JHTML::_('form.token');?>
                 </td>
             </tr>
