@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_online_maps` (
 
 CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_maps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `class_id` int(10) unsigned NOT NULL DEFAULT P0,
+  `class_id` int(10) unsigned NOT NULL DEFAULT 0,
   `entity` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
   `ordinal` smallint(4) NOT NULL DEFAULT 0,
