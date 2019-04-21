@@ -2,6 +2,8 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
+jimport("pvcombo.PVCombo");
+
 if (count(JRequest::getVar('msg', null, 'post'))) {
     foreach (JRequest::getVar('msg', null, 'post') as $msg) {
         JError::raiseWarning(1, $msg);
@@ -51,6 +53,9 @@ d($class_options);
                     </label>
                 </td>
                 <td>
+
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
+<br>
                     <?php echo JHTML::_('select.genericlist', $class_options,'myfilter', 'class="inputbox"','value','text', $row->class_id); ?>
                 </td>
             </tr>
