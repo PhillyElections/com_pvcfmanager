@@ -31,9 +31,6 @@ class PvcfmanagerControllerOnlinemap extends PvcfmanagerController
      */
     public function display()
     {
-            // if 'raw' isn't explicit, set to 'html'
-        $view = $this->getView('onlinemap', JRequest::getWord('format', 'html'));
-        $view->setModel($this->getModel('Onlinemap'), true);
         $view->setModel($this->getModel('Classes'), true);
  
         parent::display();

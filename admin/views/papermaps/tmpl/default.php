@@ -3,7 +3,7 @@ defined('_JEXEC') or die('Restricted access');
 
 $pagination = &$this->pagination;
 $rows      = $this->rows;
-d($this->classes)
+d($this->classes);
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" name="adminForm" id="adminForm">
     <div id="editcell">
