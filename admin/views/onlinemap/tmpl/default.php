@@ -10,6 +10,7 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 // try to cast to object next
 $row = !$this->isNew ? $this->row : JRequest::get('post');
 
+d($this->classes);
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
     <table cellpadding="0" cellspacing="0" border="0" class="adminform">
