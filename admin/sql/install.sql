@@ -1318,7 +1318,11 @@ VALUES
 (18,"Dan Muroff 5th District","Dan Muroff 5<sup>th</sup> District",,"",2019,"o5th_dan_muroff_us_congress.pdf","18_us_congress",1,@tnow),
 (18,"Dan Muroff 5th District","Dan Muroff 5<sup>th</sup> District",,"",2019,"05th_dan_muroff_friends_of_us_congress.pdf","18_us_congress",1,@tnow),
 (19,"Pat Toomey","Pat Toomey",,"",2019,"pat_toomey_us_senate.pdf","19_us_senate",1,@tnow),
-(20,"James DeLeon","James DeLeon",,"",2019,"james_deleon_judicial_retention.pdf","20_judicial_retention",1,@tnow),
+(20,"James DeLeon","James DeLeon",,"",2019,"james_deleon_judicial_retention.pdf","20_judicial_retention",1,@tnow);
+
+INSERT INTO `#__pv_cf_paper_maps` 
+(`class_id`,`entity`,`display`,`committee`,`ordinal`,`year`,`filename`,`typepath`,`published`,`created`) 
+VALUES
 (21,"1st Ward GOP","1<sup>st</sup> Ward GOP",,"1",2019,"01st_ward_gop.pdf","21_ward_and_party",1,@tnow),
 (21,"Ward 1 Executive Committee","Ward 1 Executive Committee",,"1",2019,"ward_1_executive_committee.pdf","21_ward_and_party",1,@tnow),
 (21,"2nd Ward Multi Cultural","2<sup>nd</sup> Ward Multi Cultural",,"2",2019,"02nd_ward_multi_cultural.pdf","21_ward_and_party",1,@tnow),
