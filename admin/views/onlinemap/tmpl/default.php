@@ -54,7 +54,7 @@ d($class_options);
                 </td>
                 <td>
 
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id', 'Select an entity class');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an entity class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
 <br>
                     <?php echo JHTML::_('select.genericlist', $class_options,'myfilter', 'class="inputbox"','value','text', $row->class_id); ?>
                 </td>
