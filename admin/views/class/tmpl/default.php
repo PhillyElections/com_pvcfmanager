@@ -16,22 +16,22 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
         <tbody>
             <tr>
                 <td width="200" height="30">
-                    <label id="publishedmsg" for="published">
-                        <?=JText::_('PUBLISHED');?>:
-                    </label>
-                </td>
-                <td>
-                    <?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $row->published); ?>
-                </td>
-            </tr>
-            <tr>
-                <td width="200" height="30">
                     <label id="idmsg" for="id">
                         <?=JText::_('ID');?>:
                     </label>
                 </td>
                 <td>
                     <?php echo $row->id; ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="publishedmsg" for="published">
+                        <?=JText::_('PUBLISHED');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $row->published); ?>
                 </td>
             </tr>
             <tr>

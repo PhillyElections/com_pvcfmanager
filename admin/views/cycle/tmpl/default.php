@@ -14,6 +14,16 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
     <table cellpadding="0" cellspacing="0" border="0" class="adminform">
         <tbody>
+            <tr>
+                <td width="200" height="30">
+                    <label id="idmsg" for="id">
+                        <?=JText::_('ID');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo $row->id; ?>
+                </td>
+            </tr>
              <tr>
                 <td width="200" height="30">
                     <label id="publishedmsg" for="published">
