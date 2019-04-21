@@ -15,10 +15,9 @@ d($this->classes);
  $class_options[] = JHTML::_('select.option','',JText::_('please choose a filter'));
 
   //now fill the array with your database result
-  foreach($this->classes as $key=>$value) :
-    d($key, $value);
-    $options[] = JHTML::_('select.option',$value->id,JText::_($value->name));
-  endforeach;
+  foreach($this->classes as $key=>$value) {
+    $class_options[] = JHTML::_('select.option',$value->id,JText::_($value->name));
+  }
 d($class_options);
 
 ?>
