@@ -11,6 +11,15 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 $row = !$this->isNew ? $this->row : JRequest::get('post');
 
 d($this->classes);
+  // add a first option to the list without looking at the database result
+ $class_options[] = JHTML::_('select.option','',JText::_('please choose a filter'));
+
+  //now fill the array with your database result
+  foreach($this->classes as $key=>$value) :
+    $options[] = JHTML::_('select.option',$value->id,JText::_($value->name));
+  endforeach;
+d($class_options);
+
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
     <table cellpadding="0" cellspacing="0" border="0" class="adminform">
@@ -37,12 +46,12 @@ d($this->classes);
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="numbermsg" for="number">
+                    <label id="class_idmsg" for="class_id">
                         <?=JText::_('ONLINEMAP NUMBER');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ONLINEMAP NUMBER PLACEHOLDER');?>" />
+&nbsp;
                 </td>
             </tr>
             <tr>
