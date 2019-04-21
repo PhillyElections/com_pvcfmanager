@@ -26,6 +26,20 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
     }
 
     /**
+     * Display overrides
+     * @return void
+     */
+    public function display()
+    {
+            // if 'raw' isn't explicit, set to 'html'
+        $view = $this->getView('papermap', JRequest::getWord('format', 'html'));
+        $view->setModel($this->getModel('Onlinemap'), true);
+        $view->setModel($this->getModel('Classes'), true);
+ 
+        parent::display();
+    }
+
+    /**
      * Display the edit form
      * @return void
      */
@@ -33,7 +47,7 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
     {
         JRequest::setVar('view', 'papermap');
 
-        parent::display();
+        $this->display();
     }
 
     /**

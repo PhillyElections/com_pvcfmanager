@@ -26,7 +26,7 @@ class PvcfmanagerControllerOnlinemap extends PvcfmanagerController
     }
 
     /**
-     * Display the edit form
+     * Display overrides
      * @return void
      */
     public function display()
@@ -38,7 +38,6 @@ class PvcfmanagerControllerOnlinemap extends PvcfmanagerController
  
         parent::display();
     }
-
 
     /**
      * Display the edit form

@@ -17,6 +17,11 @@ class PvcfmanagerViewPapermap extends JView
      **/
     public function display($tpl = null)
     {
+        // bring in classes
+        $model = $this->getModel('Classes');
+        $classes = $model->getData();
+        $this->assignRef('classes', $classes);
+
         $row = &$this->get('Data');
 
         $isNew = ($row->id < 1);
