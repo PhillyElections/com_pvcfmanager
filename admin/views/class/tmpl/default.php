@@ -26,6 +26,16 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             </tr>
             <tr>
                 <td width="200" height="30">
+                    <label id="idmsg" for="id">
+                        <?=JText::_('ID');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo $row->id; ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
                     <label id="numbermsg" for="number">
                         <?=JText::_('CLASS NUMBER');?>:
                     </label>
