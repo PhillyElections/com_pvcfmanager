@@ -51,7 +51,7 @@ d($class_options);
                     </label>
                 </td>
                 <td>
-&nbsp;
+                    <?php echo JHTML::_('select.genericlist', $class_options,'myfilter', 'class="inputbox"','value','text', $row->class_id); ?>
                 </td>
             </tr>
             <tr>
