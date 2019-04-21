@@ -12,16 +12,6 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 // try to cast to object next
 $row = !$this->isNew ? $this->row : JRequest::get('post');
 
-d($this->classes);
-  // add a first option to the list without looking at the database result
- $class_options[] = JHTML::_('select.option','',JText::_('please choose a filter'));
-
-  //now fill the array with your database result
-  foreach($this->classes as $key=>$value) {
-    $class_options[] = JHTML::_('select.option',$value->id,JText::_($value->name));
-  }
-d($class_options);
-
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
     <table cellpadding="0" cellspacing="0" border="0" class="adminform">
@@ -49,34 +39,32 @@ d($class_options);
             <tr>
                 <td width="200" height="30">
                     <label id="class_idmsg" for="class_id">
-                        <?=JText::_('ONLINEMAP NUMBER');?>:
+                        <?=JText::_('CLASS_ID');?>:
                     </label>
                 </td>
                 <td>
 
                     <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an entity class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
-<br>
-                    <?php echo JHTML::_('select.genericlist', $class_options,'myfilter', 'class="inputbox"','value','text', $row->class_id); ?>
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="namemsg" for="name">
-                        <?=JText::_('ONLINEMAP NAME');?>:
+                        <?=JText::_('NAME');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ONLINEMAP NAME PLACEHOLDER');?>" />
+                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="displaymsg" for="display">
-                        <?=JText::_('ONLINEMAP NAME');?>:
+                        <?=JText::_('DISPLAY');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ONLINEMAP NAME PLACEHOLDER');?>" />
+                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('DISPLAY PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>

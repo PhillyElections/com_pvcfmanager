@@ -36,32 +36,43 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="numbermsg" for="number">
-                        <?=JText::_('PAPERMAP NUMBER');?>:
+                    <label id="class_idmsg" for="class_id">
+                        <?=JText::_('CLASS_ID');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('PAPERMAP NUMBER PLACEHOLDER');?>" />
+
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an entity class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="numbermsg" for="number">
+                        <?=JText::_('NUMBER');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NUMBER PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="namemsg" for="name">
-                        <?=JText::_('PAPERMAP NAME');?>:
+                        <?=JText::_('NAME');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('PAPERMAP NAME PLACEHOLDER');?>" />
+                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="displaymsg" for="display">
-                        <?=JText::_('PAPERMAP NAME');?>:
+                        <?=JText::_('DISPLAY');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('PAPERMAP NAME PLACEHOLDER');?>" />
+                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('DISPLAY PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
