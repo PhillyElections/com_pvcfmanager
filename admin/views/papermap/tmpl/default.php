@@ -49,23 +49,23 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             </tr>
             <tr>
                 <td width="200" height="30">
+                    <label id="class_idmsg" for="class_id">
+                        <?=JText::_('CLASS_ID');?>:
+                    </label>
+                </td>
+                <td>
+
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an entity class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
                     <label id="entitymsg" for="entity">
                         <?=JText::_('NAME');?>:
                     </label>
                 </td>
                 <td>
                     <input type="text" id="entity" name="entity" size="62" value="<?=$row->entity ? $row->entity : $row['entity'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NAME PLACEHOLDER');?>" />
-                </td>
-            </tr>
-   
-            <tr>
-                <td width="200" height="30">
-                    <label id="namemsg" for="name">
-                        <?=JText::_('NAME');?>:
-                    </label>
-                </td>
-                <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
