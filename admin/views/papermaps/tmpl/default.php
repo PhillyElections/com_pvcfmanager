@@ -19,10 +19,10 @@ d($this->classes);
                     <th width="1px">
                         P
                     </th>
-                    <th width="10%">
+                    <th width="17.5%">
                         <?=JText::_('FILER');?>
                     </th>
-                    <th width="15%">
+                    <th width="17.5%">
                         <?=JText::_('CLASS');?>
                     </th>
                     <th width="10%">
@@ -73,7 +73,7 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <a href="<?=$link?>"><?=$row->class;?></a>
                     </td>
                     <td>
-                        <?=$row->committee;?>
+                        <?=$row->committee ? "yes": "no";?>
                     </td>
                     <td>
                         <?=$row->ordinal ? $row->ordinal : '';?>
