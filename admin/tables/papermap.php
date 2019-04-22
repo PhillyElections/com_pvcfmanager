@@ -12,16 +12,14 @@ defined('_JEXEC') or die('Restricted access');
 class TableReport extends JTable
 {
     public $id;
-    public $source;
+    public $class_id;
     public $filer;
-    public $reporturl;
-    public $year;
-    public $class;
-    public $cycle;
+    public $committee;
     public $display;
     public $ordinal;
-    public $reporttype;
-    public $reportid;
+    public $year;
+    public $filename;
+    public $typepath;
     public $published;
     public $checked_out;
     public $checked_out_time;

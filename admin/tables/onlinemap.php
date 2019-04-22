@@ -12,9 +12,10 @@ defined('_JEXEC') or die('Restricted access');
 class TableOnlinemap extends JTable
 {
     public $id;
-    public $class;
+    public $class_id;
     public $filer;
     public $display;
+    public $committee;
     public $ordinal;
     public $year;
     public $published;
