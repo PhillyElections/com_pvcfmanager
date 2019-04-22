@@ -39,8 +39,8 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
      }
 
     /**
-     * Save a record (and redirect to main page)
-     *
+     * Save a Papermap
+     * 
      * @return void
      */
     public function save()
