@@ -38,12 +38,20 @@ class PvcfmanagerControllerPapermaps extends PvcfmanagerController
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=papermap&task=edit&cid=' . $cid[0]);
     }
 
+    /**
+     * Redirect Add task to Onlinemap Controller
+     * @return void
+     */
     public function add()
     {
         $mainframe = JFactory::getApplication();
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=papermap&task=add&&cid=' . $cid[0]);
     }
 
+    /**
+     * Redirect Publish task to Onlinemap Controller
+     * @return void
+     */
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
@@ -53,6 +61,10 @@ class PvcfmanagerControllerPapermaps extends PvcfmanagerController
         $this->display();
     }
 
+    /**
+     * Redirect Unpublish task to Onlinemap Controller
+     * @return void
+     */
     public function unpublish()
     {
         JRequest::checkToken() or jexit('Invalid Token');

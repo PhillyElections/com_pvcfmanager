@@ -22,7 +22,7 @@ class PvcfmanagerControllerCycles extends PvcfmanagerController
         parent::display();
     }
 
-    /**
+   /**
      * Redirect Edit task to Cycle Controller
      * @return void
      */
@@ -33,12 +33,20 @@ class PvcfmanagerControllerCycles extends PvcfmanagerController
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=cycle&task=edit&cid=' . $cid[0]);
     }
 
+    /**
+     * Redirect Add task to Cycle Controller
+     * @return void
+     */
     public function add()
     {
         $mainframe = JFactory::getApplication();
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=cycle&task=add&&cid=' . $cid[0]);
     }
 
+    /**
+     * Redirect Publish task to Cycle Controller
+     * @return void
+     */
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
@@ -47,7 +55,11 @@ class PvcfmanagerControllerCycles extends PvcfmanagerController
         $model->publish();
         $this->display();
     }
-
+    
+    /**
+     * Redirect Unpublish task to Cycle Controller
+     * @return void
+     */
     public function unpublish()
     {
         JRequest::checkToken() or jexit('Invalid Token');

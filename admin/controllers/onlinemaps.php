@@ -38,12 +38,20 @@ class PvcfmanagerControllerOnlinemaps extends PvcfmanagerController
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=onlinemap&task=edit&cid=' . $cid[0]);
     }
 
+    /**
+     * Redirect Add task to Onlinemap Controller
+     * @return void
+     */
     public function add()
     {
         $mainframe = JFactory::getApplication();
         $mainframe->redirect('index.php?option=com_pvcfmanager&controller=onlinemap&task=add&&cid=' . $cid[0]);
     }
 
+    /**
+     * Redirect Publish task to Onlinemap Controller
+     * @return void
+     */
     public function publish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
@@ -52,7 +60,11 @@ class PvcfmanagerControllerOnlinemaps extends PvcfmanagerController
         $model->publish();
         $this->display();
     }
-
+    
+    /**
+     * Redirect Unpublish task to Onlinemap Controller
+     * @return void
+     */
     public function unpublish()
     {
         JRequest::checkToken() or jexit('Invalid Token');
