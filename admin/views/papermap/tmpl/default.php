@@ -61,11 +61,11 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
             <tr>
                 <td width="200" height="30">
                     <label id="entitymsg" for="entity">
-                        <?=JText::_('NAME');?>:
+                        <?=JText::_('ENTITY');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="entity" name="entity" size="62" value="<?=$row->entity ? $row->entity : $row['entity'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NAME PLACEHOLDER');?>" />
+                    <input type="text" id="entity" name="entity" size="62" value="<?=$row->entity ? $row->entity : $row['entity'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ENTITY PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
