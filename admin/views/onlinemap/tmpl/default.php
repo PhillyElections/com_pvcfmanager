@@ -43,17 +43,17 @@ d($row);
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an entity class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an filer class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="entitymsg" for="entity">
-                        <?=JText::_('ENTITY');?>:
+                    <label id="filermsg" for="filer">
+                        <?=JText::_('FILER');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="entity" name="entity" size="62" value="<?=$row->entity ? $row->entity : $row['entity'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ENTITY PLACEHOLDER');?>" />
+                    <input type="text" id="filer" name="filer" size="62" value="<?=$row->filer ? $row->filer : $row['filer'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('FILER PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>

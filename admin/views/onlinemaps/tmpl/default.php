@@ -23,7 +23,7 @@ d($this->classes)
                         <?=JText::_('CLASS');?>
                     </th>
                     <th width="10%">
-                        <?=JText::_('ENTITY');?>
+                        <?=JText::_('FILER');?>
                     </th>
                     <th width="10%">
                         <?=JText::_('DISPLAY');?>
@@ -70,10 +70,10 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <?=$published;?>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->class_id;?></a>
+                        <a href="<?=$link?>"><?=$row->class;?></a>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->entity;?></a>
+                        <a href="<?=$link?>"><?=$row->filer;?></a>
                     </td>
                     <td>
                         <a href="<?=$link?>"><?=$row->display;?></a>

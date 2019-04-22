@@ -13,7 +13,7 @@ class TableOnlinemap extends JTable
 {
     public $id;
     public $class;
-    public $entity;
+    public $filer;
     public $display;
     public $ordinal;
     public $year;

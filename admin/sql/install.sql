@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_imports` (
 CREATE TABLE IF NOT EXISTS `#__pv_cf_online_maps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `class_id` int(10) unsigned NOT NULL DEFAULT 0,
-  `entity` varchar(255) NOT NULL DEFAULT '',
+  `filer` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
   `committee` tinyint(1) unsigned NOT NULL DEFAULT 0,
   `ordinal` smallint(4) NOT NULL DEFAULT 0,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_online_maps` (
 CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_maps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `class_id` int(10) unsigned NOT NULL DEFAULT 0,
-  `entity` varchar(255) NOT NULL DEFAULT '',
+  `filer` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
   `committee` tinyint(1) unsigned NOT NULL DEFAULT 0,
   `ordinal` smallint(4) NOT NULL DEFAULT 0,
@@ -159,7 +159,7 @@ VALUES
 
 
 INSERT INTO `jos_pv_cf_online_maps` 
-(`class_id`,`entity`,`display`,`committee`,`ordinal`,`year`,`published`,`created`) 
+(`class_id`,`filer`,`display`,`committee`,`ordinal`,`year`,`published`,`created`) 
 VALUES
 (2,"Al Schmidt","Al Schmidt",'',"",2019,1,@tnow),
 (2,"Friends of Al Schmidt","Al Schmidt",1,"",2019,1,@tnow),
@@ -609,7 +609,7 @@ VALUES
 (22,"PA State Pipe Trades Association PAC","PA State Pipe Trades Association PAC",'',"",2019,1,@tnow);
 
 INSERT INTO `jos_pv_cf_online_maps` 
-(`class_id`,`entity`,`display`,`committee`,`ordinal`,`year`,`published`,`created`) 
+(`class_id`,`filer`,`display`,`committee`,`ordinal`,`year`,`published`,`created`) 
 VALUES
 (22,"PA UAW Good Government Committee","PA UAW Good Government Committee",'',"",2019,1,@tnow),
 (22,"PAC 102","PAC 102",'',"",2019,1,@tnow),
@@ -990,7 +990,7 @@ VALUES
 (21,"Republican City Committee","Republican City Committee",'',"",2019,1,@tnow);
 
 INSERT INTO `#__pv_cf_paper_maps` 
-(`class_id`,`entity`,`display`,`committee`,`ordinal`,`year`,`filename`,`typepath`,`published`,`created`) 
+(`class_id`,`filer`,`display`,`committee`,`ordinal`,`year`,`filename`,`typepath`,`published`,`created`) 
 VALUES
 (1,"Alan Butkovitz","Alan Butkovitz",'',"",2019,"alan_butkovitz_mayor.pdf","01_mayor",1,@tnow),
 (1,"Alan Butkovitz","Alan Butkovitz",'',"",2019,"alan_butkovitz_mayor1.pdf","01_mayor",1,@tnow),
