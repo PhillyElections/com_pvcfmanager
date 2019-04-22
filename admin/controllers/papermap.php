@@ -40,7 +40,6 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
 
     /**
      * Save a Papermap
-     * 
      * @return void
      */
     public function save()
