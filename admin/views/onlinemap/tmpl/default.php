@@ -43,7 +43,6 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
                     </label>
                 </td>
                 <td>
-
                     <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an entity class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
                 </td>
             </tr>
@@ -65,6 +64,56 @@ $row = !$this->isNew ? $this->row : JRequest::get('post');
                 </td>
                 <td>
                     <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('DISPLAY PLACEHOLDER');?>" />
+                </td>
+            </tr>
+             <tr>
+                <td width="200" height="30">
+                    <label id="committeemsg" for="committee">
+                        <?=JText::_('COMMITTEE');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo JHTML::_('select.booleanlist', 'committee', 'class="inputbox"', $row->committee); ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="ordinalmsg" for="ordinal">
+                        <?=JText::_('DISPLAY');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="ordinal" name="ordinal" size="62" value="<?=$row->ordinal ? $row->ordinal : $row['ordinal'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ORCINAL PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="yearmsg" for="year">
+                        <?=JText::_('DISPLAY');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="year" name="year" size="62" value="<?=$row->year ? $row->year : $row['year'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('YEAR PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="createdmsg" for="created">
+                        <?=JText::_('CREATED');?>:
+                    </label>
+                </td>
+                <td>
+                    <?=$row->created ? $row->created : $row['created'];?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="updatedmsg" for="updated">
+                        <?=JText::_('UPDATED');?>:
+                    </label>
+                </td>
+                <td>
+                    <?=$row->updated ? $row->updated : $row['updated'];?>
                 </td>
             </tr>
             <tr>
