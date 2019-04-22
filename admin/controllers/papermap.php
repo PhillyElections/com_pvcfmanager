@@ -26,28 +26,17 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
     }
 
     /**
-     * Display overrides
-     * @return void
-     */
-    public function display()
-    {
-        // if 'raw' isn't explicit, set to 'html'
-        $view = $this->getView('papermap', JRequest::getWord('format', 'html'));
-        $view->setModel($this->getModel('Classes'), true);
- 
-        parent::display();
-    }
-
-    /**
      * Display the edit form
      * @return void
      */
     public function edit()
     {
-        JRequest::setVar('view', 'papermap');
+        $view = $this->getView('papermap', JRequest::getWord('format', 'html'));
+        $view->setModel($this->getModel('Papermap'), true);
+        $view->setModel($this->getModel('Classes'), false);
 
-        parent::display();
-    }
+        $view->display();
+     }
 
     /**
      * Save a record (and redirect to main page)
