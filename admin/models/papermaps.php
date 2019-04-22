@@ -57,7 +57,7 @@ class PvcfmanagerModelPapermaps extends JModel
     public function _buildQuery()
     {
         $query = '  SELECT `o`.*, `c`.`name` 
-                    FROM `#__pv_cf_paper_maps o, #__pv_cf_classes c ` 
+                    FROM `#__pv_cf_paper_maps` o, `#__pv_cf_classes` c ` 
                     WHERE `o`.`class_id`=`c`.`id` ';
 
         return $query;
