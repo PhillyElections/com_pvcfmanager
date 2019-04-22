@@ -82,7 +82,7 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <?=$row->committee;?>
                     </td>
                     <td>
-                        <?=$row->ordinal;?>
+                        <?=$row->ordinal ? $row->ordinal : '';?>
                     </td>
                     <td>
                         <?=$row->year;?>

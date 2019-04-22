@@ -19,8 +19,41 @@ $rows      = $this->rows;
                     <th width="1px">
                         P
                     </th>
+                    <th width="5%">
+                        <?=JText::_('SOURCE');?>
+                    </th>
                     <th width="10%">
-                        <?=JText::_('FIELD');?>
+                        <?=JText::_('FILER');?>
+                    </th>
+                    <th width="10%">
+                        <?=JText::_('REPORTURL');?>
+                    </th>
+                    <th width="5%">
+                        <?=JText::_('Y');?>
+                    </th>
+                    <th width="10%">
+                        <?=JText::_('CLASS');?>
+                    </th>
+                    <th width="10%">
+                        <?=JText::_('CYCLE');?>
+                    </th>
+                    <th width="10%">
+                        <?=JText::_('DISPLAY');?>
+                    </th>
+                    <th width="1px">
+                        <?=JText::_('C');?>
+                    </th>
+                    <th width="1px">
+                        <?=JText::_('O');?>
+                    </th>
+                    <th width="8%">
+                        <?=JText::_('CREATED');?>
+                    </th>
+                    <th width="8%">
+                        <?=JText::_('UDPATED');?>
+                    </th>
+                    <th width="auto">
+                        &nbsp;
                     </th>
                 </tr>
             </thead>
@@ -45,7 +78,40 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <?=$published;?>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->field;?></a>
+                        <a href="<?=$link?>"><?=$row->source;?></a>
+                    </td>
+                    <td>
+                        <a href="<?=$link?>"><?=$row->filer;?></a>
+                    </td>
+                    <td>
+                        <a href="<?=$row->reporturl?>" target="_blank">Show Report</a>
+                    </td>
+                    <td>
+                        <?=$row->year;?>
+                    </td>
+                    <td>
+                        <?=$row->class;?>
+                    </td>
+                    <td>
+                        <?=$row->cycle;?>
+                    </td>
+                    <td>
+                        <?=$row->display;?>
+                    </td>
+                    <td>
+                        <?=$row->committee;?>
+                    </td>
+                    <td>
+                        <?=$row->ordinal ? $row->ordinal : '';?>
+                    </td>
+                    <td>
+                        <?=$row->created;?>
+                    </td>
+                    <td>
+                        <?=$row->updated;?>
+                    </td>
+                    <td>
+                        &nbsp;
                     </td>
                 </tr>
             <?php
@@ -55,7 +121,7 @@ $k = 1 - $k;
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="10"><?php echo $pagination->getListFooter(); ?></td>
+                    <td colspan="15"><?php echo $pagination->getListFooter(); ?></td>
                 </tr>
             </tfoot>
         </table>

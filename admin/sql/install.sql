@@ -97,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_reports` (
   `cycle_id` int(10) unsigned NOT NULL DEFAULT 0,
   `cycle_overrride_id` int(10) unsigned NOT NULL DEFAULT 0,
   `display` varchar(255) NOT NULL DEFAULT '',
+  `committee` smallint(4) NOT NULL DEFAULT 0,
   `ordinal` smallint(4) NOT NULL DEFAULT 0,
   `reporttype` varchar(255) NOT NULL DEFAULT '',
   `reportid` varchar(255) NOT NULL DEFAULT '',
