@@ -46,10 +46,10 @@ $rows      = $this->rows;
                     <th width="1px">
                         <?=JText::_('O');?>
                     </th>
-                    <th width="8%">
+                    <th width="12%">
                         <?=JText::_('CREATED');?>
                     </th>
-                    <th width="8%">
+                    <th width="12%">
                         <?=JText::_('UDPATED');?>
                     </th>
                     <th width="auto">

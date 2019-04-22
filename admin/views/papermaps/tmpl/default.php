@@ -31,13 +31,13 @@ d($this->classes);
                     <th width="1px">
                         <?=JText::_('O');?>
                     </th>
-                    <th width="5%">
+                    <th width="4%">
                         <?=JText::_('Y');?>
                     </th>
-                    <th width="13%">
+                    <th width="12%">
                         <?=JText::_('CREATED');?>
                     </th>
-                    <th width="13%">
+                    <th width="12%">
                         <?=JText::_('UDPATED');?>
                     </th>
                     <th width="auto">
