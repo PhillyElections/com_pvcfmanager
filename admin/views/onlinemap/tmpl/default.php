@@ -83,7 +83,7 @@ d($row);
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="ordinal" name="ordinal" size="62" value="<?=$row->ordinal ? $row->ordinal : $row['ordinal'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ORDINAL PLACEHOLDER');?>" />
+                    <input type="text" id="ordinal" name="ordinal" size="62" value="<?=in_array($row->ordinal,array(0,1)) ? $row->ordinal : $row['ordinal'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ORDINAL PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
