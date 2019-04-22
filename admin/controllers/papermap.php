@@ -46,7 +46,7 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
     {
         JRequest::setVar('view', 'papermap');
 
-        $this->display();
+        parent::display();
     }
 
     /**

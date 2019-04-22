@@ -48,8 +48,8 @@ class PvcfmanagerControllerOnlinemap extends PvcfmanagerController
     {
         JRequest::setVar('view', 'onlinemap');
 
-        $this->display();
-    }
+       parent::display();
+     }
 
     /**
      * Save a record (and redirect to main page)
