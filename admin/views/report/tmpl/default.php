@@ -58,7 +58,7 @@ d($row);
             <tr>
                 <td width="200" height="30">
                     <label id="displaymsg" for="display">
-                        <?=JText::_('REPORT NAME');?>:
+                        <?=JText::_('REPORT DISPLAY');?>:
                     </label>
                 </td>
                 <td>

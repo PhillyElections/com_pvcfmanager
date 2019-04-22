@@ -13,7 +13,7 @@ class TableReport extends JTable
 {
     public $id;
     public $source;
-    public $filername;
+    public $filer;
     public $reporturl;
     public $year;
     public $class;

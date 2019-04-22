@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_cycles` (
 CREATE TABLE IF NOT EXISTS `#__pv_cf_imports` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `source` varchar(10) NOT NULL DEFAULT '',
-  `filername` varchar(255) NOT NULL DEFAULT '',
+  `filer` varchar(255) NOT NULL DEFAULT '',
   `reporturl` varchar(255) NOT NULL DEFAULT '',
   `year` smallint(4) NOT NULL DEFAULT 0,
   `class` varchar(255) NOT NULL DEFAULT '',
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_maps` (
 CREATE TABLE IF NOT EXISTS `#__pv_cf_reports` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `source` varchar(10) NOT NULL DEFAULT '',
-  `filername` varchar(255) NOT NULL DEFAULT '',
+  `filer` varchar(255) NOT NULL DEFAULT '',
   `reporturl` varchar(255) NOT NULL DEFAULT '',
   `year` smallint(4) NOT NULL DEFAULT 0,
   `class_id` int(10) unsigned NOT NULL DEFAULT 0,
