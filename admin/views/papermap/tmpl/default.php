@@ -80,17 +80,17 @@ d($row);
             <tr>
                 <td width="200" height="30">
                     <label id="ordinalmsg" for="ordinal">
-                        <?=JText::_('DISPLAY');?>:
+                        <?=JText::_('ORDINAL');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="ordinal" name="ordinal" size="62" value="<?=$row->ordinal ? $row->ordinal : $row['ordinal'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ORCINAL PLACEHOLDER');?>" />
+                    <input type="text" id="ordinal" name="ordinal" size="62" value="<?=$row->ordinal ? $row->ordinal : $row['ordinal'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ORDINAL PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="yearmsg" for="year">
-                        <?=JText::_('DISPLAY');?>:
+                        <?=JText::_('YEAR');?>:
                     </label>
                 </td>
                 <td>
@@ -100,7 +100,7 @@ d($row);
             <tr>
                 <td width="200" height="30">
                     <label id="filenamemsg" for="filename">
-                        <?=JText::_('DISPLAY');?>:
+                        <?=JText::_('FILENAME');?>:
                     </label>
                 </td>
                 <td>
@@ -110,7 +110,7 @@ d($row);
             <tr>
                 <td width="200" height="30">
                     <label id="typepathmsg" for="typepath">
-                        <?=JText::_('DISPLAY');?>:
+                        <?=JText::_('TYPEPATH');?>:
                     </label>
                 </td>
                 <td>
