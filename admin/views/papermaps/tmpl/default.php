@@ -34,10 +34,10 @@ d($this->classes);
                     <th width="5%">
                         <?=JText::_('Y');?>
                     </th>
-                    <th width="10%">
+                    <th width="13%">
                         <?=JText::_('CREATED');?>
                     </th>
-                    <th width="10%">
+                    <th width="13%">
                         <?=JText::_('UDPATED');?>
                     </th>
                     <th width="auto">
