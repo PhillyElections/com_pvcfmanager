@@ -33,7 +33,7 @@ class PvcfmanagerControllerPapermap extends PvcfmanagerController
     {
             // if 'raw' isn't explicit, set to 'html'
         $view = $this->getView('papermap', JRequest::getWord('format', 'html'));
-        $view->setModel($this->getModel('Onlinemap'), true);
+        $view->setModel($this->getModel('Papermap'), true);
         $view->setModel($this->getModel('Classes'), true);
  
         parent::display();
