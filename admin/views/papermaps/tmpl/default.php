@@ -25,7 +25,7 @@ d($this->classes);
                     <th width="17.5%">
                         <?=JText::_('CLASS');?>
                     </th>
-                    <th width="10%">
+                    <th width="1px">
                         <?=JText::_('CMTE');?>
                     </th>
                     <th width="1px">
