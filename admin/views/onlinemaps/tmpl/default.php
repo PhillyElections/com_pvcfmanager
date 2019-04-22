@@ -19,10 +19,10 @@ d($this->classes)
                     <th width="1px">
                         P
                     </th>
-                    <th width="15%">
+                    <th width="17.5%">
                         <?=JText::_('FILER');?>
                     </th>
-                    <th width="15%">
+                    <th width="17.5%">
                         <?=JText::_('CLASS');?>
                     </th>
                     <th width="1px">
