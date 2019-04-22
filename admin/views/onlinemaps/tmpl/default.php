@@ -20,16 +20,13 @@ d($this->classes)
                         P
                     </th>
                     <th width="10%">
-                        <?=JText::_('CLASS');?>
-                    </th>
-                    <th width="10%">
                         <?=JText::_('FILER');?>
                     </th>
-                    <th width="10%">
-                        <?=JText::_('DISPLAY');?>
+                    <th width="15%">
+                        <?=JText::_('CLASS');?>
                     </th>
-                    <th width="10%">
-                        <?=JText::_('COMMITTEE');?>
+                    <th width="1px">
+                        <?=JText::_('CMT');?>
                     </th>
                     <th width="1px">
                         <?=JText::_('O');?>
@@ -70,16 +67,13 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <?=$published;?>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->class;?></a>
-                    </td>
-                    <td>
                         <a href="<?=$link?>"><?=$row->filer;?></a>
                     </td>
                     <td>
-                        <a href="<?=$link?>"><?=$row->display;?></a>
+                        <a href="<?=$link?>"><?=$row->class;?></a>
                     </td>
                     <td>
-                        <?=$row->committee;?>
+                        <?=$row->committee ? "yes": "no";?>
                     </td>
                     <td>
                         <?=$row->ordinal ? $row->ordinal : '';?>
@@ -104,7 +98,7 @@ $k = 1 - $k;
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="12"><?php echo $pagination->getListFooter(); ?></td>
+                    <td colspan="11"><?php echo $pagination->getListFooter(); ?></td>
                 </tr>
             </tfoot>
         </table>
