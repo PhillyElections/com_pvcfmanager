@@ -31,9 +31,12 @@ class PvcfmanagerControllerReport extends PvcfmanagerController
      */
     public function edit()
     {
-        JRequest::setVar('view', 'report');
+        $view = $this->getView('report', JRequest::getWord('format', 'html'));
+        $view->setModel($this->getModel('report'), true);
+        $view->setModel($this->getModel('classes'), false);
+        $view->setModel($this->getModel('cycles'), false);
 
-        parent::display();
+        $view->display();
     }
 
     /**
