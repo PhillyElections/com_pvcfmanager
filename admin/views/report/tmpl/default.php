@@ -62,7 +62,7 @@ d($row);
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject((object)array(array('id'=>'online','name'=>'online'),array('id'=>'paper','name'=>'paper')), 'id', 'name', 'Select a cycle'), 'source', '', 'idx', 'value', ($row->source ? $row->source : ''), 'source');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject((object)array(array('id'=>'online','name'=>'online'),array('id'=>'paper','name'=>'paper')), 'id', 'name', 'Select a source'), 'source', '', 'idx', 'value', ($row->source ? $row->source : ''), 'source');?>
                 </td>
             </tr>
             <tr>
