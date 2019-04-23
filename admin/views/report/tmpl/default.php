@@ -18,6 +18,7 @@ $name = "name";
 $object->$id="online";
 $object->$name="online";
 $source[]=$object;
+$object = new stdClass();
 $object->$id="paper";
 $object->$name="paper";
 $source[]=$object;
