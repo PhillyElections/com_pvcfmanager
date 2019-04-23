@@ -24,7 +24,7 @@ class PvcfmanagerViewReport extends JView
 
         // bring in cycles
         $model = $this->getModel('cycles');
-        $classes = $model->getData();
+        $cycles = $model->getData();
         $this->assignRef('cycles', $cycles);
 
         $row = &$this->get('Data');
