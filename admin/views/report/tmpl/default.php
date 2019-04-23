@@ -25,7 +25,7 @@ d($row);
                     <?php echo $row->id; ?>
                 </td>
             </tr>
-             <tr>
+            <tr>
                 <td width="200" height="30">
                     <label id="publishedmsg" for="published">
                         <?=JText::_('PUBLISHED');?>:
@@ -33,6 +33,36 @@ d($row);
                 </td>
                 <td>
                     <?php echo JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $row->published); ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="class_idmsg" for="class_id">
+                        <?=JText::_('CLASS_ID');?>:
+                    </label>
+                </td>
+                <td>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->classes, 'id', 'name', 'Select an filer class'), 'class_id', '', 'idx', 'value', ($row->class_id ? $row->class_id : ''), 'class_id');?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="cycle_idmsg" for="cycle_id">
+                        <?=JText::_('CYCLE_ID');?>:
+                    </label>
+                </td>
+                <td>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($this->cycles, 'id', 'name', 'Select a cycle'), 'cycle_id', '', 'idx', 'value', ($row->cycle_id ? $row->cycle_id : ''), 'cycle_id');?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="sourcemsg" for="source">
+                        <?=JText::_('CYCLE_ID');?>:
+                    </label>
+                </td>
+                <td>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject((object)array(array('id'=>'online','name'=>'online')array('id'=>'paper','name'=>'paper'),), 'id', 'name', 'Select a cycle'), 'source', '', 'idx', 'value', ($row->source ? $row->source : ''), 'source');?>
                 </td>
             </tr>
             <tr>
@@ -65,6 +95,22 @@ d($row);
                     <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORT NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
+  `source` varchar(10) NOT NULL DEFAULT '',
+  `filer` varchar(255) NOT NULL DEFAULT '',
+  `reporturl` varchar(255) NOT NULL DEFAULT '',
+  `year` smallint(4) NOT NULL DEFAULT 0,
+  `cycle_overrride_id` int(10) unsigned NOT NULL DEFAULT 0,
+  `display` varchar(255) NOT NULL DEFAULT '',
+  `committee` smallint(4) NOT NULL DEFAULT 0,
+  `ordinal` smallint(4) NOT NULL DEFAULT 0,
+  `reporttype` varchar(255) NOT NULL DEFAULT '',
+  `reportid` varchar(255) NOT NULL DEFAULT '',
+  `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
+  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+
             <tr>
                 <td height="30">&nbsp;</td>
                 <td>

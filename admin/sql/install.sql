@@ -89,12 +89,12 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_maps` (
 
 CREATE TABLE IF NOT EXISTS `#__pv_cf_reports` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `class_id` int(10) unsigned NOT NULL DEFAULT 0,
+  `cycle_id` int(10) unsigned NOT NULL DEFAULT 0,
   `source` varchar(10) NOT NULL DEFAULT '',
   `filer` varchar(255) NOT NULL DEFAULT '',
   `reporturl` varchar(255) NOT NULL DEFAULT '',
   `year` smallint(4) NOT NULL DEFAULT 0,
-  `class_id` int(10) unsigned NOT NULL DEFAULT 0,
-  `cycle_id` int(10) unsigned NOT NULL DEFAULT 0,
   `cycle_overrride_id` int(10) unsigned NOT NULL DEFAULT 0,
   `display` varchar(255) NOT NULL DEFAULT '',
   `committee` smallint(4) NOT NULL DEFAULT 0,

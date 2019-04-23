@@ -17,6 +17,16 @@ class PvcfmanagerViewReport extends JView
      **/
     public function display($tpl = null)
     {
+        // bring in classes
+        $model = $this->getModel('Classes');
+        $classes = $model->getData();
+        $this->assignRef('classes', $classes);
+
+        // bring in cycles
+        $model = $this->getModel('cycles');
+        $classes = $model->getData();
+        $this->assignRef('cycles', $cycles);
+
         $row = &$this->get('Data');
 
         $isNew = ($row->id < 1);
