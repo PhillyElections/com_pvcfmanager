@@ -13,7 +13,7 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 $row = !$this->isNew ? $this->row : JRequest::get('post');
 
 $source = array((object)Array('id'=>'online','name'=>'online'),(object)array('id'=>'paper','name'=>'paper'));
-d($row, $this->classes, $this->cycles, $source);
+d($row, $source, $this->classes, $this->cycles);
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
