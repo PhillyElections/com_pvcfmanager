@@ -12,7 +12,16 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 // try to cast to object next
 $row = !$this->isNew ? $this->row : JRequest::get('post');
 
-$source = array((object)array('id'=>'online','name'=>'online'),(object)array('id'=>'paper','name'=>'paper'));
+$object = new stdClass();
+$id = "id";
+$name = "name";
+$object->$id="online";
+$object->$name="online";
+$source[]=$object;
+$object->$id="paper";
+$object->$name="paper";
+$source[]=$object;
+
 d($row, $source, $this->classes, $this->cycles);
 
 ?>
