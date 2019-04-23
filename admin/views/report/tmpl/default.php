@@ -11,7 +11,9 @@ if (count(JRequest::getVar('msg', null, 'post'))) {
 }
 // try to cast to object next
 $row = !$this->isNew ? $this->row : JRequest::get('post');
-d($row, $this->classes, $this->cycles);
+
+$source = (object)array(1=>Array('id'=>'online','name'=>'online'),2=>array('id'=>'paper','name'=>'paper'));
+d($row, $this->classes, $this->cycles, $source);
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
@@ -64,7 +66,7 @@ d($row, $this->classes, $this->cycles);
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject((object)array(1=>Array('id'=>'online','name'=>'online'),2=>array('id'=>'paper','name'=>'paper')), 'id', 'name', 'Select a source'), 'source', '', 'idx', 'value', ($row->source ? $row->source : ''), 'source');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($sources, 'id', 'name', 'Select a source'), 'source', '', 'idx', 'value', ($row->source ? $row->source : ''), 'source');?>
                 </td>
             </tr>
             <tr>
