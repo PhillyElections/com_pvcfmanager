@@ -49,6 +49,16 @@ $sources[]=$object;
             </tr>
             <tr>
                 <td width="200" height="30">
+                    <label id="committeemsg" for="committee">
+                        <?=JText::_('COMMITTEE');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo JHTML::_('select.booleanlist', 'committee', 'class="inputbox"', $row->committee); ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
                     <label id="class_idmsg" for="class_id">
                         <?=JText::_('CLASS_ID');?>:
                     </label>
@@ -79,50 +89,94 @@ $sources[]=$object;
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="numbermsg" for="number">
-                        <?=JText::_('REPORT NUMBER');?>:
+                    <label id="filermsg" for="filer">
+                        <?=JText::_('FILER');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORT NUMBER PLACEHOLDER');?>" />
-                </td>
-            </tr>
-            <tr>
-                <td width="200" height="30">
-                    <label id="namemsg" for="name">
-                        <?=JText::_('REPORT NAME');?>:
-                    </label>
-                </td>
-                <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORT NAME PLACEHOLDER');?>" />
+                    <input type="text" id="filer" name="filer" size="62" value="<?=$row->filer ? $row->filer : $row['filer'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('FILER PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="displaymsg" for="display">
-                        <?=JText::_('REPORT DISPLAY');?>:
+                        <?=JText::_('DISPLAY');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORT NAME PLACEHOLDER');?>" />
+                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('DISPLAY PLACEHOLDER');?>" />
                 </td>
             </tr>
-  `source` varchar(10) NOT NULL DEFAULT '',
-  `filer` varchar(255) NOT NULL DEFAULT '',
-  `reporturl` varchar(255) NOT NULL DEFAULT '',
-  `year` smallint(4) NOT NULL DEFAULT 0,
-  `cycle_overrride_id` int(10) unsigned NOT NULL DEFAULT 0,
-  `display` varchar(255) NOT NULL DEFAULT '',
-  `committee` smallint(4) NOT NULL DEFAULT 0,
-  `ordinal` smallint(4) NOT NULL DEFAULT 0,
-  `reporttype` varchar(255) NOT NULL DEFAULT '',
-  `reportid` varchar(255) NOT NULL DEFAULT '',
-  `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-
+            <tr>
+                <td width="200" height="30">
+                    <label id="ordinalmsg" for="ordinal">
+                        <?=JText::_('ORDINAL');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="ordinal" name="ordinal" size="62" value="<?=$row->ordinal ? $row->ordinal : $row['ordinal'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('ORIDNAL PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="yearmsg" for="year">
+                        <?=JText::_('YEAR');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="year" name="year" size="62" value="<?=$row->year ? $row->year : $row['year'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('YEAR PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="reporturlmsg" for="reporturl">
+                        <?=JText::_('REPORTURL');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="reporturl" name="reporturl" size="62" value="<?=$row->reporturl ? $row->reporturl : $row['reporturl'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORTURL PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="reporttypemsg" for="reporttype">
+                        <?=JText::_('REPORTTYPE');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="reporttype" name="reporttype" size="62" value="<?=$row->reporttype ? $row->reporttype : $row['reporttype'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORTTYPE PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="reportidmsg" for="reportid">
+                        <?=JText::_('REPORTID');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="reportid" name="reportid" size="62" value="<?=$row->reportid ? $row->reportid : $row['reportid'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORTID PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="createdmsg" for="createdid">
+                        <?=JText::_('CREATED');?>:
+                    </label>
+                </td>
+                <td>
+                    <?=$row->created;?>:
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="updatedmsg" for="updatedid">
+                        <?=JText::_('UPDATED');?>:
+                    </label>
+                </td>
+                <td>
+                    <?=$row->updated;?>:
+                </td>
+            </tr>
             <tr>
                 <td height="30">&nbsp;</td>
                 <td>
