@@ -99,27 +99,6 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_reports` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__pv_cf_cycles` 
-(`id`,`number`, `name`, `display`,`published`,`created`) 
-VALUES
-(1,'1','Cycle 1','Sixth Tuesday Pre-Primary',1,@tnow),
-(2,'2','Cycle 2','Second Friday Pre-Primary',1,@tnow),
-(3,'3','Cycle 3','Thirty Day Post-Primary',1,@tnow),
-(4,'4','Cycle 4','Sixth Tuesday Pre-General',1,@tnow),
-(5,'5','Cycle 5','Second Friday Pre-General',1,@tnow),
-(6,'6','Cycle 6','Thirty Day Post-General',1,@tnow),
-(7,'7','Cycle 7','{YEAR} Annual Report',1,@tnow),
-(8,'8','Cycle 1 Special','Special Second Friday Pre-Election',1,@tnow),
-(9,'9','Cycle 2 Special','Special Thirty Day Post-Election',1,@tnow),
-(10,'101','Cycle 101','Fourth Tuesday Pre-Primary',1,@tnow),
-(11,'201','Cycle 201','Final Tuesday Pre-Primary',1,@tnow),
-(12,'401','Cycle 401','Fourth Tuesday Pre-General',1,@tnow),
-(13,'501','Cycle 501','Final Tuesday Pre-General',1,@tnow),
-(14,'10a','24-Hour Pre-Primary - Contributions','24-Hour Pre-Primary - Contributions',1,@tnow),
-(15,'10b','24-Hour Pre-Primary - Expenditures','24-Hour Pre-Primary - Expenditures',1,@tnow),
-(16,'11a','24-Hour Pre-General - Contributions','24-Hour Pre-General - Contributions',1,@tnow),
-(17,'11b','24-Hour Pre-General - Expenditures','24-Hour Pre-General - Expenditures',1,@tnow);
-
 INSERT INTO `#__pv_cf_classes` 
 (`id`,`number`,`name`,`display`,`format`,`published`,`created`) 
 VALUES
@@ -140,13 +119,33 @@ VALUES
 (15,'15_municipal_court','Municipal Court','Municipal Court','',1,@tnow),
 (16,'16_state_senate','State Senate','State Senate','{DISPLAY} {ORDINAL}<sup>{ORDINAL_POST}</sup> District',1,@tnow),
 (17,'17_state_representative','State Rep','State Rep','{DISPLAY} {ORDINAL}<sup>{ORDINAL_POST}</sup> District',1,@tnow),
-(18,'18_us_congress','US Congress','US Congress',,'{DISPLAY} {ORDINAL}<sup>{ORDINAL_POST}</sup> District',1,@tnow),
+(18,'18_us_congress','US Congress','US Congress','{DISPLAY} {ORDINAL}<sup>{ORDINAL_POST}</sup> District',1,@tnow),
 (19,'19_us_senate','US Senate','US Senate','',1,@tnow),
 (20,'20_judicial_retention','Judicial Retention','Judicial Retention','',1,@tnow),
 (21,'21_ward_and_party','Ward and Party','Ward and Party','',1,@tnow),
 (22,'22_political_action_committees','PACs and IEs','PACs and IEs','',1,@tnow),
 (23,'23_lobbyists','Lobbyist','Lobbyist','',1,@tnow);
 
+INSERT INTO `#__pv_cf_cycles` 
+(`id`,`number`, `name`, `display`,`published`,`created`) 
+VALUES
+(1,'1','Cycle 1','Sixth Tuesday Pre-Primary',1,@tnow),
+(2,'2','Cycle 2','Second Friday Pre-Primary',1,@tnow),
+(3,'3','Cycle 3','Thirty Day Post-Primary',1,@tnow),
+(4,'4','Cycle 4','Sixth Tuesday Pre-General',1,@tnow),
+(5,'5','Cycle 5','Second Friday Pre-General',1,@tnow),
+(6,'6','Cycle 6','Thirty Day Post-General',1,@tnow),
+(7,'7','Cycle 7','{YEAR} Annual Report',1,@tnow),
+(8,'8','Cycle 1 Special','Special Second Friday Pre-Election',1,@tnow),
+(9,'9','Cycle 2 Special','Special Thirty Day Post-Election',1,@tnow),
+(10,'101','Cycle 101','Fourth Tuesday Pre-Primary',1,@tnow),
+(11,'201','Cycle 201','Final Tuesday Pre-Primary',1,@tnow),
+(12,'401','Cycle 401','Fourth Tuesday Pre-General',1,@tnow),
+(13,'501','Cycle 501','Final Tuesday Pre-General',1,@tnow),
+(14,'10a','24-Hour Pre-Primary - Contributions','24-Hour Pre-Primary - Contributions',1,@tnow),
+(15,'10b','24-Hour Pre-Primary - Expenditures','24-Hour Pre-Primary - Expenditures',1,@tnow),
+(16,'11a','24-Hour Pre-General - Contributions','24-Hour Pre-General - Contributions',1,@tnow),
+(17,'11b','24-Hour Pre-General - Expenditures','24-Hour Pre-General - Expenditures',1,@tnow);
 
 INSERT INTO `jos_pv_cf_online_maps` 
 (`class_id`,`filer`,`display`,`committee`,`ordinal`,`year`,`published`,`created`) 
