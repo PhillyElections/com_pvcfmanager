@@ -49,16 +49,6 @@ $sources[]=$object;
             </tr>
             <tr>
                 <td width="200" height="30">
-                    <label id="committeemsg" for="committee">
-                        <?=JText::_('COMMITTEE');?>:
-                    </label>
-                </td>
-                <td>
-                    <?php echo JHTML::_('select.booleanlist', 'committee', 'class="inputbox"', $row->committee); ?>
-                </td>
-            </tr>
-            <tr>
-                <td width="200" height="30">
                     <label id="class_idmsg" for="class_id">
                         <?=JText::_('CLASS_ID');?>:
                     </label>
@@ -95,6 +85,36 @@ $sources[]=$object;
                 </td>
                 <td>
                     <input type="text" id="filer" name="filer" size="62" value="<?=$row->filer ? $row->filer : $row['filer'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('FILER PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="committeemsg" for="committee">
+                        <?=JText::_('COMMITTEE');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo JHTML::_('select.booleanlist', 'committee', 'class="inputbox"', $row->committee); ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="amendedmsg" for="amended">
+                        <?=JText::_('AMENDED');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo JHTML::_('select.booleanlist', 'amended', 'class="inputbox"', $row->amended); ?>
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="terminationmsg" for="termination">
+                        <?=JText::_('TERMINATION');?>:
+                    </label>
+                </td>
+                <td>
+                    <?php echo JHTML::_('select.booleanlist', 'termination', 'class="inputbox"', $row->termination); ?>
                 </td>
             </tr>
             <tr>
