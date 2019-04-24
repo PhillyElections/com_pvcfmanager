@@ -15,8 +15,6 @@ class TableClass extends JTable
     public $number;
     public $name;
     public $published;
-    public $checked_out;
-    public $checked_out_time;
     public $created;
     public $updated;
 

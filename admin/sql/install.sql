@@ -13,8 +13,6 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_classes` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -26,8 +24,6 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_cycles` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `display` varchar(255) NOT NULL DEFAULT '',
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -46,8 +42,6 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_imports` (
   `reporttype` varchar(255) NOT NULL DEFAULT '',
   `reportid` varchar(255) NOT NULL DEFAULT '',
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -62,8 +56,6 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_online_maps` (
   `ordinal` smallint(4) NOT NULL DEFAULT 0,
   `year` smallint(4) NOT NULL DEFAULT 0,
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -80,8 +72,6 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_paper_maps` (
   `filename` varchar(255) NOT NULL DEFAULT '',
   `typepath` varchar(255) NOT NULL DEFAULT '',
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
@@ -102,8 +92,6 @@ CREATE TABLE IF NOT EXISTS `#__pv_cf_reports` (
   `reporttype` varchar(255) NOT NULL DEFAULT '',
   `reportid` varchar(255) NOT NULL DEFAULT '',
   `published` tinyint(1) unsigned NOT NULL DEFAULT 0,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT 0,
-  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
