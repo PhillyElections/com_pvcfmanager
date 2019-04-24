@@ -17,11 +17,11 @@ $id = "id";
 $name = "name";
 $object->$id="online";
 $object->$name="online";
-$source[]=$object;
+$sources[]=$object;
 $object = new stdClass();
 $object->$id="paper";
 $object->$name="paper";
-$source[]=$object;
+$sources[]=$object;
 
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
@@ -74,7 +74,7 @@ $source[]=$object;
                     </label>
                 </td>
                 <td>
-                    <?=JHTML::_('select.genericlist', PVCombo::getsFromArray($sources, 'id', 'name', 'Select a source'), 'source', '', 'idx', 'value', ($row->source ? $row->source : ''), 'source');?>
+                    <?=JHTML::_('select.genericlist', PVCombo::getsFromObject($sources, 'id', 'name', 'Select a source'), 'source', '', 'idx', 'value', ($row->source ? $row->source : ''), 'source');?>
                 </td>
             </tr>
             <tr>
