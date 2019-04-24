@@ -23,9 +23,6 @@ $object->$id="paper";
 $object->$name="paper";
 $source[]=$object;
 
-d($row, $source, $this->classes, $this->cycles);
-var_dump($source);
-var_dump($this->classes);
 ?>
 <form action="<?=JRoute::_('index.php?option=com_pvcfmanager');?>" method="post" id="adminForm" name="adminForm" class="form-validate">
     <table cellpadding="0" cellspacing="0" border="0" class="adminform">
