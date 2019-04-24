@@ -71,7 +71,7 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <a href="<?=$link?>"><?=$row->display;?></a>
                     </td>
                     <td>
-                        <?=$row->format;?>
+                        <pre><?=$row->format;?></pre>
                     </td>
                     <td>
                         <?=$row->created;?>
