@@ -44,6 +44,12 @@ $rows      = $this->rows;
                         <?=JText::_('C');?>
                     </th>
                     <th width="1px">
+                        <?=JText::_('A');?>
+                    </th>
+                    <th width="1px">
+                        <?=JText::_('T');?>
+                    </th>
+                    <th width="1px">
                         <?=JText::_('O');?>
                     </th>
                     <th width="12%">
@@ -99,7 +105,13 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                         <?=$row->display;?>
                     </td>
                     <td>
-                        <?=$row->committee;?>
+                        <?=$row->committee ? 'Y' : 'N';?>
+                    </td>
+                    <td>
+                        <?=$row->amended ? 'Y' : 'N';?>
+                    </td>
+                    <td>
+                        <?=$row->termination ? 'Y' : 'N';?>
                     </td>
                     <td>
                         <?=$row->ordinal ? $row->ordinal : '';?>
