@@ -30,7 +30,7 @@ class PvcfmanagerViewClass extends JView
             // $tpl = 'add';
         } else {
             // for existing items the button is renamed `close`
-            JToolBarHelper::save('save', 'Update');
+            JToolBarHelper::save('save', 'Save');
             JToolBarHelper::cancel('cancel', 'Close');
         }
 

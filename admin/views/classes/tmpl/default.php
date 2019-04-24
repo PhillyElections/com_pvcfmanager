@@ -20,13 +20,16 @@ $rows      = $this->rows;
                         P
                     </th>
                    <th width="5%">
-                        <?=JText::_('CLASS NUMBER');?>
+                        <?=JText::_('NUMBER');?>
                     </th>
                     <th width="20%">
-                        <?=JText::_('CLASS NAME');?>
+                        <?=JText::_('NAME');?>
                     </th>
                     <th width="20%">
-                        <?=JText::_('CLASS DISPLAY');?>
+                        <?=JText::_('DISPLAY');?>
+                    </th>
+                    <th width="20%">
+                        <?=JText::_('FORMAT');?>
                     </th>
                     <th width="10%">
                         <?=JText::_('CREATED');?>
@@ -66,6 +69,9 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
                     </td>
                     <td>
                         <a href="<?=$link?>"><?=$row->display;?></a>
+                    </td>
+                    <td>
+                        <?=$row->format;?>
                     </td>
                     <td>
                         <?=$row->created;?>

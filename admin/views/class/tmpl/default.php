@@ -38,31 +38,41 @@ d($row);
             <tr>
                 <td width="200" height="30">
                     <label id="numbermsg" for="number">
-                        <?=JText::_('CLASS NUMBER');?>:
+                        <?=JText::_('NUMBER');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS NUMBER PLACEHOLDER');?>" />
+                    <input type="text" id="number" name="number" size="62" value="<?=$row->number ? $row->number : $row['number'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NUMBER PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="namemsg" for="name">
-                        <?=JText::_('CLASS NAME');?>:
+                        <?=JText::_('NAME');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS NAME PLACEHOLDER');?>" />
+                    <input type="text" id="name" name="name" size="62" value="<?=$row->name ? $row->name : $row['name'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('NAME PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>
                 <td width="200" height="30">
                     <label id="displaymsg" for="display">
-                        <?=JText::_('CLASS DISPLAY');?>:
+                        <?=JText::_('DISPLAY');?>:
                     </label>
                 </td>
                 <td>
-                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('CLASS DISPLAY PLACEHOLDER');?>" />
+                    <input type="text" id="display" name="display" size="62" value="<?=$row->display ? $row->display : $row['display'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('DISPLAY PLACEHOLDER');?>" />
+                </td>
+            </tr>
+            <tr>
+                <td width="200" height="30">
+                    <label id="formatmsg" for="format">
+                        <?=JText::_('FORMAT');?>:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="format" name="format" size="62" value="<?=$row->format ? $row->format : $row['format'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('FORMAT PLACEHOLDER');?>" />
                 </td>
             </tr>
             <tr>

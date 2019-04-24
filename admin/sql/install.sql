@@ -121,7 +121,7 @@ VALUES
 (17,'11b','24-Hour Pre-General - Expenditures','24-Hour Pre-General - Expenditures',1,@tnow);
 
 INSERT INTO `#__pv_cf_classes` 
-(`id`,`number`,`name`,`display`,`published`,`created`) 
+(`id`,`number`,`name`,`display`,`format`,`published`,`created`) 
 VALUES
 (1,'01_mayor','Mayor','Mayor','',1,@tnow),
 (2,'02_city_commissioners','City Commissioners','City Commissioners','',1,@tnow),

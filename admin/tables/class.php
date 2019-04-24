@@ -14,6 +14,8 @@ class TableClass extends JTable
     public $id;
     public $number;
     public $name;
+    public $display;
+    public $format;
     public $published;
     public $created;
     public $updated;

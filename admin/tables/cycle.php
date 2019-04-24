@@ -14,6 +14,7 @@ class TableCycle extends JTable
     public $id;
     public $number;
     public $name;
+    public $display;
     public $published;
     public $created;
     public $updated;
