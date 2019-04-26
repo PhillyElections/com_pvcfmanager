@@ -177,6 +177,9 @@ $sources[]=$object;
                     <input type="text" id="reportid" name="reportid" size="62" value="<?=$row->reportid ? $row->reportid : $row['reportid'];?>" class="input_box required" maxlength="60" classholder="<?=JText::_('REPORTID PLACEHOLDER');?>" />
                 </td>
             </tr>
+<?php
+if (!$this->isNew):
+?>
             <tr>
                 <td width="200" height="30">
                     <label id="createdmsg" for="createdid">
@@ -197,6 +200,9 @@ $sources[]=$object;
                     <?=$row->updated;?>:
                 </td>
             </tr>
+<?php
+endif;
+?>
             <tr>
                 <td height="30">&nbsp;</td>
                 <td>
