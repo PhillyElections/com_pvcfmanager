@@ -90,7 +90,7 @@ $k = 1 - $k;
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="9"><?php echo $pagination->getListFooter(); ?></td>
+                    <td colspan="10"><?php echo $pagination->getListFooter(); ?></td>
                 </tr>
             </tfoot>
         </table>
