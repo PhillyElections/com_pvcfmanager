@@ -71,7 +71,6 @@ for ($i = 0, $n = count($rows); $i < $n; $i++) {
     $checked = JHTML::_('grid.id', $i, $row->id);
     $published = JHTML::_('grid.published', $row, $i);
     $link = JRoute::_('index.php?option=com_pvcfmanager&controller=report&task=edit&cid[]='.$row->id);
-
             ?>
                 <tr class="<?="row$k";?>">
                     <td>
