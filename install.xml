@@ -35,7 +35,7 @@
         <language tag="es-ES">es-ES.com_pvcfmanager.ini</language>
     </languages>
     <administration>
-        <menu link="option=com_pvcfmanager">PVCFManager</menu>
+        <menu link="option=com_pvcfmanager">Campaign Finance Manager</menu>
         <submenu>
           <menu link="option=com_pvcfmanager">Reports</menu>
           <menu link="option=com_pvcfmanager&amp;controller=onlinemaps">Configure Online Maps</menu>
